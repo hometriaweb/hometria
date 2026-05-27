@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { PropertyCard } from './PropertyCard'
 import { getFeaturedProperties } from '@/lib/properties'
+import ScrollReveal from '@/components/ScrollReveal'
 
 export default async function FeaturedProperties() {
   const properties = await getFeaturedProperties()
@@ -12,27 +13,35 @@ export default async function FeaturedProperties() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#E6007E] mb-3">
-              Nasza oferta
-            </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
-              Wybrane nieruchomości
-            </h2>
+            <ScrollReveal>
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#E6007E] mb-3">
+                Nasza oferta
+              </p>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
+                Wybrane nieruchomości
+              </h2>
+            </ScrollReveal>
           </div>
-          <Link
-            href="/oferty"
-            id="featured-see-all"
-            className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-[#E6007E] transition-colors duration-200 shrink-0"
-          >
-            Zobacz więcej
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-          </Link>
+          <ScrollReveal delay={0.2}>
+            <Link
+              href="/oferty"
+              id="featured-see-all"
+              className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-[#E6007E] transition-colors duration-200 shrink-0"
+            >
+              Zobacz więcej
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+            </Link>
+          </ScrollReveal>
         </div>
 
         {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {properties.map((property) => (
-            <PropertyCard key={property._id} property={property} />
+          {properties.map((property, index) => (
+            <ScrollReveal key={property._id} delay={0.1 * (index + 1)}>
+              <PropertyCard property={property} />
+            </ScrollReveal>
           ))}
         </div>
       </div>
