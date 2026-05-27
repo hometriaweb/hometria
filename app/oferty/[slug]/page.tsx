@@ -46,9 +46,39 @@ export async function generateMetadata({
     { next: { revalidate: 3600 } }
   )
   if (!property) return {}
+  const ogImage = property.mainImage
+    ? typeof property.mainImage === 'string'
+      ? property.mainImage
+      : urlFor(property.mainImage).width(1200).height(630).url()
+    : undefined
+
+  const description = `${property.category} · ${property.location} · ${property.area} m² · ${new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN', maximumFractionDigits: 0 }).format(property.price)}`
+
   return {
     title: `${property.title} – HOMETRIA`,
-    description: `${property.category} · ${property.location} · ${property.area} m² · ${new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN', maximumFractionDigits: 0 }).format(property.price)}`,
+    description,
+    openGraph: {
+      title: `${property.title} – HOMETRIA`,
+      description,
+      url: `https://hometria.pl/oferty/${slug}`,
+      type: 'article',
+      ...(ogImage && {
+        images: [
+          {
+            url: ogImage,
+            width: 1200,
+            height: 630,
+            alt: property.title,
+          },
+        ],
+      }),
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: property.title,
+      description,
+      ...(ogImage && { images: [ogImage] }),
+    },
   }
 }
 

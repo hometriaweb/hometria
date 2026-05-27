@@ -9,6 +9,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://hometria.pl'),
   title: 'HOMETRIA – Bezpieczna sprzedaż nieruchomości w Warszawie',
   description:
     'Profesjonalne biuro nieruchomości w Warszawie. Sprzedaż, odkup, inwestycje i doradztwo formalne. Ponad 12 lat doświadczenia. Skontaktuj się i sprzedaj nieruchomość bez chaosu.',
@@ -18,13 +19,36 @@ export const metadata: Metadata = {
     'odkup nieruchomości',
     'pośrednik nieruchomości',
     'hometria',
+    'agencja nieruchomości',
+    'skup nieruchomości'
   ],
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'HOMETRIA – Bezpieczna sprzedaż nieruchomości',
     description:
       'Profesjonalne biuro nieruchomości w Warszawie. Bez chaosu i zbędnych formalności.',
+    url: 'https://hometria.pl',
+    siteName: 'HOMETRIA',
     locale: 'pl_PL',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'HOMETRIA – Bezpieczna sprzedaż nieruchomości w Warszawie',
+    description: 'Profesjonalne biuro nieruchomości w Warszawie. Sprzedaż, odkup, inwestycje i doradztwo formalne.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
