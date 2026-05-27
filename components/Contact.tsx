@@ -1,5 +1,6 @@
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import ContactForm from './ContactForm'
+import ScrollReveal from '@/components/ScrollReveal'
 
 const contactDetails = [
   {
@@ -33,37 +34,43 @@ export default function Contact() {
     <section id="kontakt" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#E6007E] mb-3">
-            Skontaktuj się
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
-            Porozmawiajmy o Twojej nieruchomości
-          </h2>
-          <p className="text-gray-500 max-w-xl mx-auto">
-            Wypełnij formularz, a nasz doradca odezwie się do Ciebie
-            w ciągu jednego dnia roboczego.
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className="text-center mb-16">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#E6007E] mb-3">
+              Skontaktuj się
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+              Porozmawiajmy o Twojej nieruchomości
+            </h2>
+            <p className="text-gray-500 max-w-xl mx-auto">
+              Wypełnij formularz, a nasz doradca odezwie się do Ciebie
+              w ciągu jednego dnia roboczego.
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Form */}
-          <div className="bg-gray-50 rounded-2xl p-7 sm:p-10 border border-gray-100">
-            <ContactForm />
-          </div>
+          <ScrollReveal delay={0.2}>
+            <div className="bg-gray-50 rounded-2xl p-7 sm:p-10 border border-gray-100">
+              <ContactForm />
+            </div>
+          </ScrollReveal>
 
           {/* Contact details */}
           <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Dane kontaktowe</h3>
-              <p className="text-gray-500 text-sm">
-                Preferujesz kontakt telefoniczny? Zadzwoń, a z przyjemnością
-                odpowiemy na wszystkie pytania.
-              </p>
-            </div>
+            <ScrollReveal delay={0.3}>
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Dane kontaktowe</h3>
+                <p className="text-gray-500 text-sm">
+                  Preferujesz kontakt telefoniczny? Zadzwoń, a z przyjemnością
+                  odpowiemy na wszystkie pytania.
+                </p>
+              </div>
+            </ScrollReveal>
 
             <div className="space-y-5">
-              {contactDetails.map((item) => {
+              {contactDetails.map((item, idx) => {
                 const Icon = item.icon
                 const content = (
                   <div className="flex items-start gap-4">
@@ -80,26 +87,31 @@ export default function Contact() {
                 )
 
                 return item.href ? (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target={item.href.startsWith('http') ? '_blank' : undefined}
-                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="block hover:opacity-80 transition-opacity"
-                  >
-                    {content}
-                  </a>
+                  <ScrollReveal key={item.label} delay={0.4 + idx * 0.1}>
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith('http') ? '_blank' : undefined}
+                      rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="block hover:opacity-80 transition-opacity"
+                    >
+                      {content}
+                    </a>
+                  </ScrollReveal>
                 ) : (
-                  <div key={item.label}>{content}</div>
+                  <ScrollReveal key={item.label} delay={0.4 + idx * 0.1}>
+                    <div>{content}</div>
+                  </ScrollReveal>
                 )
               })}
             </div>
 
             {/* Map placeholder */}
-            <div className="rounded-xl overflow-hidden border border-gray-100 h-48 bg-gray-50 flex items-center justify-center text-gray-400 text-sm">
-              <MapPin className="w-5 h-5 mr-2 text-[#E6007E]" />
-              Mapa — integracja z Google Maps
-            </div>
+            <ScrollReveal delay={0.8}>
+              <div className="rounded-xl overflow-hidden border border-gray-100 h-48 bg-gray-50 flex items-center justify-center text-gray-400 text-sm">
+                <MapPin className="w-5 h-5 mr-2 text-[#E6007E]" />
+                Mapa — integracja z Google Maps
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>

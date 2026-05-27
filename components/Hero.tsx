@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, PhoneCall } from 'lucide-react'
+import ScrollReveal from '@/components/ScrollReveal'
 
 export default function Hero() {
   return (
@@ -13,62 +14,72 @@ export default function Hero() {
           {/* Left – copy */}
           <div className="space-y-8">
             {/* Label */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-50 border border-pink-100">
-              <span className="w-2 h-2 rounded-full bg-[#E6007E] animate-pulse" />
-              <span className="text-xs font-semibold text-[#E6007E] uppercase tracking-widest">
-                Biuro Nieruchomości
-              </span>
-            </div>
+            <ScrollReveal delay={0.1}>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-50 border border-pink-100">
+                <span className="w-2 h-2 rounded-full bg-[#E6007E] animate-pulse" />
+                <span className="text-xs font-semibold text-[#E6007E] uppercase tracking-widest">
+                  Biuro Nieruchomości
+                </span>
+              </div>
+            </ScrollReveal>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-gray-900">
-              Bezpieczna sprzedaż{' '}
-              <span className="text-[#E6007E]">nieruchomości</span>{' '}
-              – bez chaosu i zbędnych formalności
-            </h1>
+            <ScrollReveal delay={0.2}>
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-gray-900">
+                Bezpieczna sprzedaż{' '}
+                <span className="text-[#E6007E]">nieruchomości</span>{' '}
+                – bez chaosu i zbędnych formalności
+              </h1>
+            </ScrollReveal>
 
-            <p className="text-lg text-gray-500 leading-relaxed max-w-lg">
-              Wspieramy właścicieli nieruchomości na każdym etapie sprzedaży.
-              Od wyceny, przez marketing, aż po bezpieczne sfinalizowanie
-              transakcji – wszystko w jednym miejscu.
-            </p>
+            <ScrollReveal delay={0.3}>
+              <p className="text-lg text-gray-500 leading-relaxed max-w-lg">
+                Wspieramy właścicieli nieruchomości na każdym etapie sprzedaży.
+                Od wyceny, przez marketing, aż po bezpieczne sfinalizowanie
+                transakcji – wszystko w jednym miejscu.
+              </p>
+            </ScrollReveal>
 
             {/* Stats row */}
-            <div className="flex flex-wrap gap-8">
-              {[
-                { value: '250+', label: 'Zrealizowanych transakcji' },
-                { value: '12', label: 'Lat doświadczenia' },
-                { value: '98%', label: 'Zadowolonych klientów' },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <p className="text-2xl font-black text-gray-900">{stat.value}</p>
-                  <p className="text-sm text-gray-500">{stat.label}</p>
-                </div>
-              ))}
-            </div>
+            <ScrollReveal delay={0.4}>
+              <div className="flex flex-wrap gap-8">
+                {[
+                  { value: '250+', label: 'Zrealizowanych transakcji' },
+                  { value: '12', label: 'Lat doświadczenia' },
+                  { value: '98%', label: 'Zadowolonych klientów' },
+                ].map((stat) => (
+                  <div key={stat.label}>
+                    <p className="text-2xl font-black text-gray-900">{stat.value}</p>
+                    <p className="text-sm text-gray-500">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
 
             {/* CTA buttons */}
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/oferty"
-                id="hero-cta-sell"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#E6007E] text-white font-semibold text-sm shadow-lg shadow-pink-200 hover:bg-[#c4006b] active:scale-95 transition-all duration-200"
-              >
-                Sprzedaj nieruchomość
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/kontakt"
-                id="hero-cta-contact"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border-2 border-gray-900 text-gray-900 font-semibold text-sm hover:bg-gray-900 hover:text-white active:scale-95 transition-all duration-200"
-              >
-                <PhoneCall className="w-4 h-4" />
-                Skontaktuj się
-              </Link>
-            </div>
+            <ScrollReveal delay={0.5}>
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href="/oferty"
+                  id="hero-cta-sell"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#E6007E] text-white font-semibold text-sm shadow-lg shadow-pink-200 hover:bg-[#c4006b] active:scale-95 transition-all duration-200"
+                >
+                  Sprzedaj nieruchomość
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/kontakt"
+                  id="hero-cta-contact"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border-2 border-gray-900 text-gray-900 font-semibold text-sm hover:bg-gray-900 hover:text-white active:scale-95 transition-all duration-200"
+                >
+                  <PhoneCall className="w-4 h-4" />
+                  Skontaktuj się
+                </Link>
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Right – image */}
-          <div className="relative">
+          <ScrollReveal delay={0.6} className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
               <Image
                 src="/hero-interior.jpg"
@@ -95,7 +106,7 @@ export default function Hero() {
 
             {/* Decorative blob */}
             <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full bg-pink-100/60 -z-10 blur-2xl" />
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

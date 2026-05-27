@@ -46,10 +46,12 @@ export default function ServicesPage() {
         {/* ── Header ────────────────────────────────────────────── */}
         <section className="bg-white border-b border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 text-center">
-            <ScrollReveal>
+            <ScrollReveal delay={0.1}>
               <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">
                 W czym możemy Ci pomóc?
               </h1>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
               <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
                 Niezależnie od tego, czy chcesz zyskownie sprzedać dom, czy szukasz bezpiecznej inwestycji – mamy gotowe rozwiązania skrojone na miarę Twoich potrzeb.
               </p>
@@ -61,7 +63,7 @@ export default function ServicesPage() {
         <section className="py-20 lg:py-32">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 lg:space-y-20">
             {services.map((service, index) => (
-              <ScrollReveal key={index} direction={index % 2 === 0 ? 'left' : 'right'}>
+              <ScrollReveal key={index} delay={0.1 * index}>
                 <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow">
                   <div className="w-16 h-16 rounded-2xl bg-pink-50 flex items-center justify-center shrink-0">
                     <service.icon className="w-8 h-8 text-[#E6007E]" strokeWidth={1.5} />
@@ -89,22 +91,26 @@ export default function ServicesPage() {
 
         {/* ── CTA Bottom ────────────────────────────────────────── */}
         <section className="bg-gray-900 py-20">
-          <ScrollReveal>
             <div className="max-w-4xl mx-auto px-4 text-center">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6">
-                Nie jesteś pewien, jak zacząć?
-              </h2>
-              <p className="text-gray-400 mb-10 text-lg">
-                Skontaktuj się z nami. Zbadamy Twoje potrzeby i zaproponujemy optymalny plan działania — to nic nie kosztuje.
-              </p>
-              <Link
-                href="/kontakt"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#E6007E] text-white font-semibold shadow-lg shadow-[#E6007E]/20 hover:bg-[#c4006b] hover:scale-105 transition-all duration-300"
-              >
-                Zamów bezpłatną wycenę
-              </Link>
+              <ScrollReveal delay={0.1}>
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-6">
+                  Nie jesteś pewien, jak zacząć?
+                </h2>
+              </ScrollReveal>
+              <ScrollReveal delay={0.2}>
+                <p className="text-gray-400 mb-10 text-lg">
+                  Skontaktuj się z nami. Zbadamy Twoje potrzeby i zaproponujemy optymalny plan działania — to nic nie kosztuje.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal delay={0.3}>
+                <Link
+                  href="/kontakt"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#E6007E] text-white font-semibold shadow-lg shadow-[#E6007E]/20 hover:bg-[#c4006b] hover:scale-105 transition-all duration-300"
+                >
+                  Zamów bezpłatną wycenę
+                </Link>
+              </ScrollReveal>
             </div>
-          </ScrollReveal>
         </section>
       </main>
       <Footer />

@@ -46,10 +46,12 @@ export default function ContactPage() {
         {/* ── Header ────────────────────────────────────────────── */}
         <section className="bg-pink-50/50 pt-16 pb-24 border-b border-pink-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <ScrollReveal>
+            <ScrollReveal delay={0.1}>
               <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">
                 Porozmawiajmy o nieruchomościach
               </h1>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                 Niezależnie czy chcesz sprzedać dom, czy dopiero badasz rynek – jesteśmy tu, aby Ci pomóc.
               </p>
@@ -63,14 +65,16 @@ export default function ContactPage() {
             
             {/* Left: Contact Info */}
             <div className="lg:col-span-2 space-y-10">
-              <ScrollReveal direction="left">
-                <div>
+              <div>
+                <ScrollReveal delay={0.1}>
                   <h2 className="text-2xl font-bold text-gray-900 mb-8">
                     Dane kontaktowe
                   </h2>
-                  <div className="space-y-8">
-                    {contactInfo.map((item, i) => (
-                      <div key={i} className="flex gap-4">
+                </ScrollReveal>
+                <div className="space-y-8">
+                  {contactInfo.map((item, i) => (
+                    <ScrollReveal key={i} delay={0.2 + 0.1 * i}>
+                      <div className="flex gap-4">
                         <div className="w-12 h-12 rounded-xl bg-pink-50 flex items-center justify-center shrink-0">
                           <item.icon className="w-5 h-5 text-[#E6007E]" strokeWidth={2} />
                         </div>
@@ -94,10 +98,12 @@ export default function ContactPage() {
                           )}
                         </div>
                       </div>
-                    ))}
-                  </div>
+                    </ScrollReveal>
+                  ))}
                 </div>
+              </div>
 
+              <ScrollReveal delay={0.6}>
                 <div className="pt-8 border-t border-gray-100">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">
                     Obserwuj nas
@@ -120,7 +126,7 @@ export default function ContactPage() {
 
             {/* Right: Contact Form */}
             <div className="lg:col-span-3">
-              <ScrollReveal direction="right" delay={0.2}>
+              <ScrollReveal delay={0.4}>
                 <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100">
                   <h2 className="text-2xl font-bold text-gray-900 mb-2">
                     Wyślij wiadomość
