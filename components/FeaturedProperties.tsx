@@ -20,7 +20,7 @@ export default async function FeaturedProperties() {
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
-                Promowane oferty nieruchomości w Radomiu
+                Promowane oferty nieruchomości
               </h2>
             </ScrollReveal>
           </div>
