@@ -1,24 +1,34 @@
 /**
- * Server-only data fetching layer — uses next-sanity Live Content API.
+ * Server-only data fetching layer — uses standard client.fetch with Next.js ISR cache
+ * to drastically reduce Sanity API usage.
  * Do NOT import this file from Client Components.
  */
-import { sanityFetch } from '@/sanity/lib/live'
+import { client } from '@/sanity/lib/client'
 import { FEATURED_PROPERTIES_QUERY, ALL_PROPERTIES_QUERY } from './queries'
 import type { Property } from '@/types/property'
 
 /**
- * Fetch promoted properties from Sanity CMS.
- * Automatically revalidates when content changes in Sanity Studio.
+ * Fetch promoted properties from Sanity CMS with Next.js cache.
+ * Revalidates in the background every 1 hour (3600s) to save API calls.
  */
 export async function getFeaturedProperties(): Promise<Property[]> {
-  const { data } = await sanityFetch({ query: FEATURED_PROPERTIES_QUERY })
+  const data = await client.fetch(
+    FEATURED_PROPERTIES_QUERY,
+    {},
+    { next: { revalidate: 3600 } }
+  )
   return data as Property[]
 }
 
 /**
- * Fetch all properties from Sanity CMS.
+ * Fetch all properties from Sanity CMS with Next.js cache.
+ * Revalidates in the background every 1 hour (3600s) to save API calls.
  */
 export async function getAllProperties(): Promise<Property[]> {
-  const { data } = await sanityFetch({ query: ALL_PROPERTIES_QUERY })
+  const data = await client.fetch(
+    ALL_PROPERTIES_QUERY,
+    {},
+    { next: { revalidate: 3600 } }
+  )
   return data as Property[]
 }

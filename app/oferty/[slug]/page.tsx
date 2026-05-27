@@ -18,7 +18,6 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PropertyGallery from '@/components/PropertyGallery'
 import ContactForm from '@/components/ContactForm'
-import { sanityFetch } from '@/sanity/lib/live'
 import { client } from '@/sanity/lib/client'
 import { urlFor } from '@/sanity/lib/image'
 import {
@@ -41,11 +40,11 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const { data } = await sanityFetch({
-    query: PROPERTY_BY_SLUG_QUERY,
-    params: { slug },
-  })
-  const property = data as Property | null
+  const property = await client.fetch<Property | null>(
+    PROPERTY_BY_SLUG_QUERY,
+    { slug },
+    { next: { revalidate: 3600 } }
+  )
   if (!property) return {}
   return {
     title: `${property.title} – HOMETRIA`,
@@ -140,10 +139,11 @@ export default async function PropertyDetailPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const { data: property } = await sanityFetch({
-    query: PROPERTY_BY_SLUG_QUERY,
-    params: { slug },
-  })
+  const property = await client.fetch<Property | null>(
+    PROPERTY_BY_SLUG_QUERY,
+    { slug },
+    { next: { revalidate: 3600 } }
+  )
 
   if (!property) notFound()
 
