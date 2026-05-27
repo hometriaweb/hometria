@@ -13,15 +13,6 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left – copy */}
           <div className="space-y-8">
-            {/* Label */}
-            <ScrollReveal delay={0.1}>
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-50 border border-pink-100">
-                <span className="w-2 h-2 rounded-full bg-[#E6007E] animate-pulse" />
-                <span className="text-xs font-semibold text-[#E6007E] uppercase tracking-widest">
-                  Biuro Nieruchomości
-                </span>
-              </div>
-            </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
               <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-gray-900">
