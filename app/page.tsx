@@ -6,12 +6,8 @@ import FeaturedProperties from '@/components/FeaturedProperties'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
+export const revalidate = 3600
 
-/**
- * Home page — App Router Server Component.
- * All heavy sections are Server Components by default.
- * Only ContactForm (inside Contact) is a Client Component.
- */
 export default function Home() {
   return (
     <>
