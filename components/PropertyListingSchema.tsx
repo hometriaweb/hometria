@@ -45,7 +45,6 @@ export default function PropertyListingSchema({ property, slug, imageUrl }: Prop
         address: {
           '@type': 'PostalAddress',
           addressLocality: property.location,
-          addressRegion: 'Mazowieckie',
           addressCountry: 'PL',
         },
         offers: {

@@ -13,30 +13,28 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://hometria.pl'),
   title: {
-    default: 'Hometria – Biuro Nieruchomości Radom | Sprzedaż i Wynajem',
+    default: 'Hometria – Biuro Nieruchomości | Sprzedaż i Wynajem',
     template: '%s | Hometria',
   },
   description:
-    'Profesjonalne biuro nieruchomości w Radomiu. Sprzedaż, wynajem i odkup mieszkań, domów i działek w Radomiu i okolicach. Ponad 12 lat doświadczenia. Zadzwoń i rozpocznij bezpieczną transakcję.',
+    'Profesjonalne biuro nieruchomości. Sprzedaż, wynajem i odkup mieszkań, domów i działek. Ponad 12 lat doświadczenia. Skontaktuj się i rozpocznij bezpieczną transakcję.',
   keywords: [
-    'biuro nieruchomości Radom',
-    'agencja nieruchomości Radom',
-    'sprzedaż nieruchomości Radom',
-    'mieszkania na sprzedaż Radom',
-    'domy na sprzedaż Radom',
-    'działki Radom',
-    'pośrednik nieruchomości Radom',
-    'skup nieruchomości Radom',
+    'biuro nieruchomości',
+    'agencja nieruchomości',
+    'sprzedaż nieruchomości',
+    'mieszkania na sprzedaż',
+    'domy na sprzedaż',
+    'pośrednik nieruchomości',
+    'skup nieruchomości',
     'hometria',
-    'nieruchomości Radom',
   ],
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Hometria – Biuro Nieruchomości Radom',
+    title: 'Hometria – Biuro Nieruchomości',
     description:
-      'Profesjonalne biuro nieruchomości w Radomiu. Sprzedaż, wynajem i odkup bez chaosu i zbędnych formalności.',
+      'Profesjonalne biuro nieruchomości. Sprzedaż, wynajem i odkup bez chaosu i zbędnych formalności.',
     url: 'https://hometria.pl',
     siteName: 'Hometria',
     locale: 'pl_PL',
@@ -46,15 +44,15 @@ export const metadata: Metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Hometria – Biuro Nieruchomości Radom',
+        alt: 'Hometria – Biuro Nieruchomości',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hometria – Biuro Nieruchomości Radom',
+    title: 'Hometria – Biuro Nieruchomości',
     description:
-      'Profesjonalne biuro nieruchomości w Radomiu. Sprzedaż, wynajem i odkup nieruchomości.',
+      'Profesjonalne biuro nieruchomości. Sprzedaż, wynajem i odkup nieruchomości.',
   },
   robots: {
     index: true,

@@ -69,7 +69,7 @@ export async function generateMetadata({
 
   // title feeds into root layout template: "<title> | Hometria"
   const title = `${property.title} ${transactionLabel} – ${property.location}`
-  const description = `${property.category} ${transactionLabel} w ${property.location}. ${property.area} m²${roomsPart}. Cena: ${formattedPrice}. Sprawdź ofertę biura nieruchomości Hometria Radom.`
+  const description = `${property.category} ${transactionLabel} w ${property.location}. ${property.area} m²${roomsPart}. Cena: ${formattedPrice}. Sprawdź ofertę biura nieruchomości Hometria.`
 
   return {
     title,

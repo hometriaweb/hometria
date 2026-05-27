@@ -3,7 +3,7 @@ const schema = {
   '@type': 'RealEstateAgent',
   '@id': 'https://hometria.pl/#business',
   name: 'Hometria',
-  alternateName: 'Hometria Biuro Nieruchomości Radom',
+  alternateName: 'Hometria Biuro Nieruchomości',
   url: 'https://hometria.pl',
   logo: {
     '@type': 'ImageObject',
@@ -13,30 +13,25 @@ const schema = {
   },
   image: 'https://hometria.pl/hero-interior.jpg',
   description:
-    'Profesjonalne biuro nieruchomości w Radomiu. Sprzedaż, wynajem i odkup mieszkań, domów i działek w Radomiu i okolicach. Ponad 12 lat doświadczenia na lokalnym rynku.',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'ul. Przykładowa 1',
-    addressLocality: 'Radom',
-    postalCode: '26-600',
-    addressRegion: 'Mazowieckie',
-    addressCountry: 'PL',
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 51.4027,
-    longitude: 21.1471,
-  },
+    'Profesjonalne biuro nieruchomości. Sprzedaż, wynajem i odkup mieszkań, domów i działek. Ponad 12 lat doświadczenia.',
+  // TODO: uzupełnić po ustaleniu lokalizacji biura z klientem
+  // address: {
+  //   '@type': 'PostalAddress',
+  //   streetAddress: '',
+  //   addressLocality: '',
+  //   postalCode: '',
+  //   addressRegion: '',
+  //   addressCountry: 'PL',
+  // },
+  // geo: {
+  //   '@type': 'GeoCoordinates',
+  //   latitude: 0,
+  //   longitude: 0,
+  // },
   telephone: '+48123456789',
   email: 'kontakt@hometria.pl',
   priceRange: '$$',
   currenciesAccepted: 'PLN',
-  paymentAccepted: 'Przelew bankowy, gotówka',
-  areaServed: [
-    { '@type': 'City', name: 'Radom' },
-    { '@type': 'AdministrativeArea', name: 'Powiat radomski' },
-    { '@type': 'AdministrativeArea', name: 'Województwo mazowieckie' },
-  ],
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',

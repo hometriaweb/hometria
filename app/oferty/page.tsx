@@ -7,7 +7,7 @@ import { getAllProperties } from '@/lib/properties'
 export const revalidate = 3600
 
 export const metadata = {
-  title: 'Oferty nieruchomości w Radomiu – Hometria',
+  title: 'Oferty nieruchomości – Hometria',
   description:
     'Przeglądaj pełną bazę ofert nieruchomości Hometria. Mieszkania, domy, działki i lokale komercyjne w Warszawie i okolicach. Filtruj według ceny, powierzchni, rynku i kategorii.',
 }
