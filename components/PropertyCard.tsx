@@ -50,7 +50,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
       <div className="relative h-52 sm:h-60 overflow-hidden">
         <Image
           src={imageSrc}
-          alt={property.title}
+          alt={`${property.title} – ${property.category} na sprzedaż w ${property.location}`}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-500"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

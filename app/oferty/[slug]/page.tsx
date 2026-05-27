@@ -17,6 +17,7 @@ import {
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PropertyGallery from '@/components/PropertyGallery'
+import PropertyListingSchema from '@/components/PropertyListingSchema'
 import ContactForm from '@/components/ContactForm'
 import { client } from '@/sanity/lib/client'
 import { urlFor } from '@/sanity/lib/image'
@@ -46,19 +47,38 @@ export async function generateMetadata({
     { next: { revalidate: 3600 } }
   )
   if (!property) return {}
+
   const ogImage = property.mainImage
     ? typeof property.mainImage === 'string'
       ? property.mainImage
       : urlFor(property.mainImage).width(1200).height(630).url()
     : undefined
 
-  const description = `${property.category} · ${property.location} · ${property.area} m² · ${new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN', maximumFractionDigits: 0 }).format(property.price)}`
+  const isRental = /wynajem|najem|do wynajęcia/i.test(property.title)
+  const transactionLabel = isRental ? 'na wynajem' : 'na sprzedaż'
+  const formattedPrice = new Intl.NumberFormat('pl-PL', {
+    style: 'currency',
+    currency: 'PLN',
+    maximumFractionDigits: 0,
+  }).format(property.price)
+
+  const roomsPart =
+    property.rooms > 0
+      ? `, ${property.rooms} ${property.rooms === 1 ? 'pokój' : property.rooms <= 4 ? 'pokoje' : 'pokoi'}`
+      : ''
+
+  // title feeds into root layout template: "<title> | Hometria"
+  const title = `${property.title} ${transactionLabel} – ${property.location}`
+  const description = `${property.category} ${transactionLabel} w ${property.location}. ${property.area} m²${roomsPart}. Cena: ${formattedPrice}. Sprawdź ofertę biura nieruchomości Hometria Radom.`
 
   return {
-    title: `${property.title} – HOMETRIA`,
+    title,
     description,
+    alternates: {
+      canonical: `/oferty/${slug}`,
+    },
     openGraph: {
-      title: `${property.title} – HOMETRIA`,
+      title: `${title} | Hometria`,
       description,
       url: `https://hometria.pl/oferty/${slug}`,
       type: 'article',
@@ -68,14 +88,14 @@ export async function generateMetadata({
             url: ogImage,
             width: 1200,
             height: 630,
-            alt: property.title,
+            alt: `${property.title} – ${property.category} ${transactionLabel} w ${property.location}`,
           },
         ],
       }),
     },
     twitter: {
       card: 'summary_large_image',
-      title: property.title,
+      title,
       description,
       ...(ogImage && { images: [ogImage] }),
     },
@@ -181,9 +201,11 @@ export default async function PropertyDetailPage({
   const images = resolveImages(p)
   const price = formatPrice(p.price)
   const pricePerM2 = p.area > 0 ? formatPrice(Math.round(p.price / p.area)) : null
+  const mainImageUrl = images[0]
 
   return (
     <>
+      <PropertyListingSchema property={p} slug={slug} imageUrl={mainImageUrl} />
       <Navbar />
 
       <main className="pt-18 bg-white min-h-screen">

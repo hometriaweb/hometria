@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import ScrollToTop from '@/components/ScrollToTop'
+import LocalBusinessSchema from '@/components/LocalBusinessSchema'
 import './globals.css'
 
 const inter = Inter({
@@ -11,34 +12,49 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://hometria.pl'),
-  title: 'HOMETRIA – Bezpieczna sprzedaż nieruchomości w Warszawie',
+  title: {
+    default: 'Hometria – Biuro Nieruchomości Radom | Sprzedaż i Wynajem',
+    template: '%s | Hometria',
+  },
   description:
-    'Profesjonalne biuro nieruchomości w Warszawie. Sprzedaż, odkup, inwestycje i doradztwo formalne. Ponad 12 lat doświadczenia. Skontaktuj się i sprzedaj nieruchomość bez chaosu.',
+    'Profesjonalne biuro nieruchomości w Radomiu. Sprzedaż, wynajem i odkup mieszkań, domów i działek w Radomiu i okolicach. Ponad 12 lat doświadczenia. Zadzwoń i rozpocznij bezpieczną transakcję.',
   keywords: [
-    'biuro nieruchomości Warszawa',
-    'sprzedaż nieruchomości',
-    'odkup nieruchomości',
-    'pośrednik nieruchomości',
+    'biuro nieruchomości Radom',
+    'agencja nieruchomości Radom',
+    'sprzedaż nieruchomości Radom',
+    'mieszkania na sprzedaż Radom',
+    'domy na sprzedaż Radom',
+    'działki Radom',
+    'pośrednik nieruchomości Radom',
+    'skup nieruchomości Radom',
     'hometria',
-    'agencja nieruchomości',
-    'skup nieruchomości'
+    'nieruchomości Radom',
   ],
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'HOMETRIA – Bezpieczna sprzedaż nieruchomości',
+    title: 'Hometria – Biuro Nieruchomości Radom',
     description:
-      'Profesjonalne biuro nieruchomości w Warszawie. Bez chaosu i zbędnych formalności.',
+      'Profesjonalne biuro nieruchomości w Radomiu. Sprzedaż, wynajem i odkup bez chaosu i zbędnych formalności.',
     url: 'https://hometria.pl',
-    siteName: 'HOMETRIA',
+    siteName: 'Hometria',
     locale: 'pl_PL',
     type: 'website',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Hometria – Biuro Nieruchomości Radom',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'HOMETRIA – Bezpieczna sprzedaż nieruchomości w Warszawie',
-    description: 'Profesjonalne biuro nieruchomości w Warszawie. Sprzedaż, odkup, inwestycje i doradztwo formalne.',
+    title: 'Hometria – Biuro Nieruchomości Radom',
+    description:
+      'Profesjonalne biuro nieruchomości w Radomiu. Sprzedaż, wynajem i odkup nieruchomości.',
   },
   robots: {
     index: true,
@@ -61,6 +77,7 @@ export default function RootLayout({
   return (
     <html lang="pl" className={`${inter.variable} h-full antialiased overflow-x-hidden`}>
       <body className="min-h-full flex flex-col bg-white overflow-x-hidden">
+        <LocalBusinessSchema />
         <ScrollToTop />
         {children}
       </body>

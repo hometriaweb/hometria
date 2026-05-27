@@ -16,8 +16,8 @@ export default function Hero() {
 
             <ScrollReveal delay={0.2}>
               <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-gray-900">
-                Bezpieczna sprzedaż{' '}
-                <span className="text-[#E6007E]">nieruchomości</span>{' '}
+                Bezpieczna sprzedaż nieruchomości{' '}
+                <span className="text-[#E6007E]">w Radomiu</span>{' '}
                 – bez chaosu i zbędnych formalności
               </h1>
             </ScrollReveal>
@@ -74,7 +74,7 @@ export default function Hero() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
               <Image
                 src="/hero-interior.jpg"
-                alt="Luksusowe wnętrze nowoczesnego apartamentu"
+                alt="Nowoczesne wnętrze mieszkania na sprzedaż – Biuro Nieruchomości Hometria Radom"
                 fill
                 className="object-cover"
                 priority
