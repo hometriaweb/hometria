@@ -45,7 +45,7 @@ const navLinks = [
 
 const legalLinks = [
   { href: '/polityka-prywatnosci', label: 'Polityka prywatności' },
-  { href: '/cookies', label: 'Polityka cookies' },
+  { href: '/polityka-cookies', label: 'Polityka cookies' },
   { href: '/regulamin', label: 'Regulamin' },
 ]
 
