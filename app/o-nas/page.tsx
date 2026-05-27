@@ -68,15 +68,15 @@ export default function AboutPage() {
         </section>
 
         {/* ── Stats ────────────────────────────────────────────── */}
-        <section className="py-16 bg-[#E6007E]">
+        <section className="py-16 bg-gray-950">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-x divide-white/20">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-x divide-white/10">
               {stats.map((stat, i) => (
                 <ScrollReveal key={i} delay={0.1 * i} className="text-center px-4">
                   <p className="text-4xl sm:text-5xl font-black text-white mb-2">
                     {stat.value}
                   </p>
-                  <p className="text-sm font-medium text-pink-100">
+                  <p className="text-sm font-medium text-gray-400">
                     {stat.label}
                   </p>
                 </ScrollReveal>

@@ -49,10 +49,10 @@ export default function Contact() {
           </div>
         </ScrollReveal>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
           {/* Form */}
-          <ScrollReveal delay={0.2}>
-            <div className="bg-gray-50 rounded-2xl p-7 sm:p-10 border border-gray-100">
+          <ScrollReveal delay={0.2} className="h-full">
+            <div className="bg-gray-50 rounded-2xl p-7 sm:p-10 border border-gray-100 h-full">
               <ContactForm />
             </div>
           </ScrollReveal>

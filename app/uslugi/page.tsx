@@ -60,32 +60,39 @@ export default function ServicesPage() {
         </section>
 
         {/* ── Services List ─────────────────────────────────────── */}
-        <section className="py-20 lg:py-32">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 lg:space-y-20">
-            {services.map((service, index) => (
-              <ScrollReveal key={index} delay={0.1 * index}>
-                <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-sm border border-gray-100 flex flex-col md:flex-row gap-8 items-start hover:shadow-md transition-shadow">
-                  <div className="w-16 h-16 rounded-2xl bg-pink-50 flex items-center justify-center shrink-0">
-                    <service.icon className="w-8 h-8 text-[#E6007E]" strokeWidth={1.5} />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                      {service.title}
-                    </h2>
-                    <p className="text-gray-600 leading-relaxed text-lg mb-6">
+        <section className="py-20 lg:py-28">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid sm:grid-cols-2 gap-5">
+              {services.map((service, index) => (
+                <ScrollReveal key={index} delay={0.1 * index}>
+                  <div className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-[#E6007E]/20 hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                    {/* Icon + title row */}
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center shrink-0 group-hover:bg-[#E6007E] transition-colors duration-300">
+                        <service.icon className="w-5 h-5 text-[#E6007E] group-hover:text-white transition-colors duration-300" strokeWidth={1.75} />
+                      </div>
+                      <h2 className="text-base font-bold text-gray-900 leading-snug pt-1.5">
+                        {service.title}
+                      </h2>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-sm text-gray-500 leading-relaxed flex-1 mb-5">
                       {service.description}
                     </p>
+
+                    {/* CTA */}
                     <Link
                       href="/kontakt"
-                      className="inline-flex items-center gap-2 font-semibold text-[#E6007E] hover:text-[#c4006b] transition-colors group"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E6007E] hover:text-[#c4006b] transition-colors group/link"
                     >
                       Zapytaj o szczegóły
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
                     </Link>
                   </div>
-                </div>
-              </ScrollReveal>
-            ))}
+                </ScrollReveal>
+              ))}
+            </div>
           </div>
         </section>
 

@@ -2,6 +2,7 @@
 
 import { useState, useId } from 'react'
 import { Send, CheckCircle, AlertCircle } from 'lucide-react'
+import { sendContactEmail } from '@/app/actions/contact'
 
 type FormState = 'idle' | 'loading' | 'success' | 'error'
 
@@ -22,9 +23,12 @@ export default function ContactForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setState('loading')
-    // Simulate API call — replace with actual endpoint / Server Action
-    await new Promise((res) => setTimeout(res, 1200))
-    setState('success')
+    try {
+      await sendContactEmail(form)
+      setState('success')
+    } catch {
+      setState('error')
+    }
   }
 
   if (state === 'success') {
