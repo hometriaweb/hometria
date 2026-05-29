@@ -9,6 +9,15 @@ type ContactPayload = {
   message: string
 }
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+}
+
 export async function sendContactEmail(data: ContactPayload) {
   const apiKey = process.env.RESEND_API_KEY
   if (!apiKey) throw new Error('Brak RESEND_API_KEY w zmiennych środowiskowych.')
@@ -17,11 +26,16 @@ export async function sendContactEmail(data: ContactPayload) {
 
   const recipient = process.env.CONTACT_EMAIL ?? 'kontakt@hometria.pl'
 
+  const name = escapeHtml(data.name)
+  const email = escapeHtml(data.email)
+  const phone = escapeHtml(data.phone)
+  const message = escapeHtml(data.message)
+
   const { error } = await resend.emails.send({
     from: 'Formularz Hometria <formularz@hometria.pl>',
     to: recipient,
     replyTo: data.email,
-    subject: `Nowe zapytanie od ${data.name}`,
+    subject: `Nowe zapytanie od ${name}`,
     html: `
       <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#111">
         <div style="background:#E6007E;padding:24px 32px;border-radius:12px 12px 0 0">
@@ -31,20 +45,20 @@ export async function sendContactEmail(data: ContactPayload) {
           <table style="width:100%;border-collapse:collapse">
             <tr>
               <td style="padding:8px 0;color:#666;font-size:13px;width:130px;vertical-align:top">Imię i nazwisko</td>
-              <td style="padding:8px 0;font-weight:600;font-size:14px">${data.name}</td>
+              <td style="padding:8px 0;font-weight:600;font-size:14px">${name}</td>
             </tr>
             <tr>
               <td style="padding:8px 0;color:#666;font-size:13px;vertical-align:top">E-mail</td>
-              <td style="padding:8px 0;font-size:14px"><a href="mailto:${data.email}" style="color:#E6007E">${data.email}</a></td>
+              <td style="padding:8px 0;font-size:14px"><a href="mailto:${email}" style="color:#E6007E">${email}</a></td>
             </tr>
-            ${data.phone ? `
+            ${phone ? `
             <tr>
               <td style="padding:8px 0;color:#666;font-size:13px;vertical-align:top">Telefon</td>
-              <td style="padding:8px 0;font-size:14px">${data.phone}</td>
+              <td style="padding:8px 0;font-size:14px">${phone}</td>
             </tr>` : ''}
             <tr>
               <td style="padding:8px 0;color:#666;font-size:13px;vertical-align:top">Wiadomość</td>
-              <td style="padding:8px 0;font-size:14px;white-space:pre-wrap">${data.message}</td>
+              <td style="padding:8px 0;font-size:14px;white-space:pre-wrap">${message}</td>
             </tr>
           </table>
           <div style="margin-top:24px;padding-top:16px;border-top:1px solid #eee;font-size:12px;color:#aaa">

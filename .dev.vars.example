@@ -1,0 +1,9 @@
+# Wrangler local dev variables — skopiuj do .dev.vars i uzupełnij wartości
+# Plik .dev.vars jest w .gitignore i nie trafia do repozytorium
+
+# Klucz API Resend (https://resend.com/api-keys)
+RESEND_API_KEY=re_...
+
+# Adres email na który przychodzą zapytania z formularza
+# Domyślnie: kontakt@hometria.pl
+CONTACT_EMAIL=kontakt@hometria.pl

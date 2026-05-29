@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo, useCallback } from 'react'
+import { motion } from 'framer-motion'
 import { SlidersHorizontal, ChevronDown, X, Search } from 'lucide-react'
 import { PropertyCard } from './PropertyCard'
 import { filterProperties } from '@/lib/filters'
@@ -10,6 +11,12 @@ import type {
   PropertyCategory,
   PropertyMarketType,
 } from '@/types/property'
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 28 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] as const, delay },
+})
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type SortOption = 'newest' | 'price-asc' | 'price-desc' | 'area-asc' | 'area-desc'
@@ -135,17 +142,17 @@ export default function PropertyListings({ properties }: { properties: Property[
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* ── Page header ──────────────────────────────────────────── */}
-      <div className="mb-10">
+      <motion.div {...fadeUp(0)} className="mb-10">
         <p className="text-xs font-semibold uppercase tracking-widest text-[#E6007E] mb-2">
           Nasza baza
         </p>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
           Wszystkie oferty
         </h1>
-      </div>
+      </motion.div>
 
       {/* ── Search + controls bar ─────────────────────────────────── */}
-      <div className="flex flex-wrap items-center gap-3 mb-6">
+      <motion.div {...fadeUp(0.1)} className="flex flex-wrap items-center gap-3 mb-6">
         {/* Search */}
         <div className="relative flex-1 min-w-[200px]">
           <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -198,7 +205,7 @@ export default function PropertyListings({ properties }: { properties: Property[
           <span className="font-semibold text-gray-900">{results.length}</span>{' '}
           {results.length === 1 ? 'oferta' : results.length <= 4 ? 'oferty' : 'ofert'}
         </p>
-      </div>
+      </motion.div>
 
       {/* ── Filter panel ──────────────────────────────────────────── */}
       {showFilters && (
@@ -350,8 +357,20 @@ export default function PropertyListings({ properties }: { properties: Property[
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {results.map((property) => (
-            <PropertyCard key={property._id} property={property} />
+          {results.map((property, i) => (
+            <motion.div
+              key={property._id}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{
+                duration: 0.55,
+                ease: [0.25, 0.1, 0.25, 1],
+                delay: Math.min(i * 0.07, 0.35),
+              }}
+            >
+              <PropertyCard property={property} />
+            </motion.div>
           ))}
         </div>
       )}
