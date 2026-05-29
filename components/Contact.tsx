@@ -6,8 +6,8 @@ const contactDetails = [
   {
     icon: Phone,
     label: 'Telefon',
-    value: '+48 123 456 789',
-    href: 'tel:+48123456789',
+    value: '+48 889 000 829',
+    href: 'tel:+48889000829',
   },
   {
     icon: Mail,
@@ -18,8 +18,8 @@ const contactDetails = [
   {
     icon: MapPin,
     label: 'Adres',
-    value: 'ul. Marszałkowska 10/16, 00-590 Warszawa',
-    href: 'https://maps.google.com',
+    value: 'ul. Grunwaldzka 10, pawilon D3\n82-200 Malbork',
+    href: 'https://maps.google.com/?q=Grunwaldzka+10+Malbork',
   },
   {
     icon: Clock,

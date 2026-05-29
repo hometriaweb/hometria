@@ -279,12 +279,12 @@ export default async function PropertyDetailPage({
 
                 <div className="mt-6 space-y-3">
                   <a
-                    href="tel:+48123456789"
+                    href="tel:+48889000829"
                     id="property-call-cta"
                     className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#E6007E] text-white font-semibold text-sm shadow-lg shadow-pink-200 hover:bg-[#c4006b] active:scale-95 transition-all duration-200"
                   >
                     <Phone className="w-4 h-4" />
-                    Zadzwoń: +48 123 456 789
+                    Zadzwoń: +48 889 000 829
                   </a>
                   <a
                     href="#kontakt-formularz"

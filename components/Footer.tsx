@@ -71,13 +71,16 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-relaxed max-w-xs">
-              Profesjonalne biuro nieruchomości z ponad 12-letnim doświadczeniem
-              na rynku pierwotnym i wtórnym w Warszawie i okolicach.
+              Nowoczesne biuro nieruchomości specjalizujące się w kompleksowej
+              obsłudze sprzedaży, zakupu oraz inwestycji na rynku nieruchomości.
             </p>
             <div className="text-xs space-y-1">
-              <p className="font-medium text-gray-300">HOMETRIA sp. z o.o.</p>
-              <p>ul. Marszałkowska 10/16, 00-590 Warszawa</p>
-              <p>NIP: 000-000-00-00 | KRS: 0000000000</p>
+              <p className="font-medium text-gray-300">HOMETRIA</p>
+              <p>ul. Grunwaldzka 10, pawilon D3</p>
+              <p>82-200 Malbork</p>
+              <a href="tel:+48889000829" className="block hover:text-[#E6007E] transition-colors">
+                +48 889 000 829
+              </a>
             </div>
             {/* Social icons */}
             <div className="flex items-center gap-3 pt-1">

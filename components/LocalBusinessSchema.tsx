@@ -14,21 +14,15 @@ const schema = {
   image: 'https://hometria.pl/hero-interior.jpg',
   description:
     'Profesjonalne biuro nieruchomości. Sprzedaż, wynajem i odkup mieszkań, domów i działek. Ponad 12 lat doświadczenia.',
-  // TODO: uzupełnić po ustaleniu lokalizacji biura z klientem
-  // address: {
-  //   '@type': 'PostalAddress',
-  //   streetAddress: '',
-  //   addressLocality: '',
-  //   postalCode: '',
-  //   addressRegion: '',
-  //   addressCountry: 'PL',
-  // },
-  // geo: {
-  //   '@type': 'GeoCoordinates',
-  //   latitude: 0,
-  //   longitude: 0,
-  // },
-  telephone: '+48123456789',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'ul. Grunwaldzka 10, pawilon D3',
+    addressLocality: 'Malbork',
+    postalCode: '82-200',
+    addressRegion: 'Pomorskie',
+    addressCountry: 'PL',
+  },
+  telephone: '+48889000829',
   email: 'kontakt@hometria.pl',
   priceRange: '$$',
   currenciesAccepted: 'PLN',

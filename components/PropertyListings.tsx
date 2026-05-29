@@ -375,8 +375,6 @@ export default function PropertyListings({ properties }: { properties: Property[
         </div>
       )}
 
-      {/* roomsLabel is used by Chip above via the `label` prop */}
-      {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
       <span className="sr-only">{roomsLabel(1)}</span>
     </div>
   )

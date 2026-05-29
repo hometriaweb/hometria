@@ -16,17 +16,17 @@ export default function Hero() {
 
             <ScrollReveal delay={0.2}>
               <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-gray-900">
-                Bezpieczna sprzedaż{' '}
-                <span className="text-[#E6007E]">nieruchomości</span>{' '}
-                – bez chaosu i zbędnych formalności
+                Sprzedaj nieruchomość{' '}
+                <span className="text-[#E6007E]">szybciej</span>{' '}
+                i za lepszą cenę
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
               <p className="text-lg text-gray-500 leading-relaxed max-w-lg">
-                Wspieramy właścicieli nieruchomości na każdym etapie sprzedaży.
-                Od wyceny, przez marketing, aż po bezpieczne sfinalizowanie
-                transakcji – wszystko w jednym miejscu.
+                Pomagamy sprzedać nieruchomość bez stresu i zbędnych formalności.
+                Towarzyszymy Państwu na każdym etapie transakcji – od pierwszej
+                rozmowy aż po bezpieczne przekazanie nieruchomości.
               </p>
             </ScrollReveal>
 

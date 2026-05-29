@@ -8,15 +8,15 @@ import ScrollReveal from '@/components/ScrollReveal'
 export const metadata: Metadata = {
   title: 'Kontakt – HOMETRIA',
   description:
-    'Skontaktuj się z biurem nieruchomości Hometria w Warszawie. Zadzwoń, napisz email lub odwiedź nas osobiście.',
+    'Skontaktuj się z biurem nieruchomości Hometria w Malborku. Zadzwoń, napisz email lub odwiedź nas osobiście przy ul. Grunwaldzkiej 10.',
 }
 
 const contactInfo = [
   {
     icon: Phone,
     label: 'Zadzwoń do nas',
-    value: '+48 123 456 789',
-    href: 'tel:+48123456789',
+    value: '+48 889 000 829',
+    href: 'tel:+48889000829',
   },
   {
     icon: Mail,
@@ -27,13 +27,13 @@ const contactInfo = [
   {
     icon: MapPin,
     label: 'Odwiedź biuro',
-    value: 'ul. Marszałkowska 126/134, 00-008 Warszawa',
-    href: 'https://maps.google.com/?q=Marszalkowska+126/134+Warszawa',
+    value: 'ul. Grunwaldzka 10, pawilon D3\n82-200 Malbork',
+    href: 'https://maps.google.com/?q=Grunwaldzka+10+Malbork',
   },
   {
     icon: Clock,
     label: 'Godziny pracy',
-    value: 'Pon-Pt: 9:00 - 18:00\nSobota: 10:00 - 14:00',
+    value: 'Pon–Pt: 9:00–18:00\nSobota: 10:00–14:00',
     href: null,
   },
 ]
