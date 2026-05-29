@@ -3,6 +3,8 @@ import Hero from '@/components/Hero'
 import Services from '@/components/Services'
 import Advantages from '@/components/Advantages'
 import FeaturedProperties from '@/components/FeaturedProperties'
+import Team from '@/components/Team'
+import Testimonials from '@/components/Testimonials'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
@@ -17,6 +19,8 @@ export default function Home() {
         <Services />
         <Advantages />
         <FeaturedProperties />
+        <Team />
+        <Testimonials />
         <Contact />
       </main>
       <Footer />

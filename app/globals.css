@@ -2,9 +2,11 @@
 
 /* ─── Custom CSS Variables ───────────────────────────────────── */
 :root {
-  --color-magenta: #E6007E;
-  --color-magenta-dark: #c4006b;
-  --color-navy: #0D0D1A;
+  --color-magenta: #FF1493;
+  --color-magenta-dark: #d4006b;
+  --color-navy: #0B1120;
+  --color-gold: #C89B3C;
+  --color-gold-dark: #B8860B;
 }
 
 /* ─── Tailwind theme extension ───────────────────────────────── */

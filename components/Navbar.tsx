@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Phone, Menu, X } from 'lucide-react'
@@ -38,10 +39,15 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-18">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 shrink-0">
-              <span className="text-2xl font-black tracking-tight text-gray-900">
-                HOME<span className="text-[#E6007E]">TRIA</span>
-              </span>
+            <Link href="/" className="flex items-center shrink-0">
+              <Image
+                src="/logo.png"
+                alt="Hometria – Biuro Nieruchomości"
+                width={140}
+                height={74}
+                className="h-10 w-auto"
+                priority
+              />
             </Link>
 
             {/* Desktop nav */}
@@ -64,12 +70,12 @@ export default function Navbar() {
 
             {/* Phone CTA */}
             <a
-              href="tel:+48123456789"
+              href="tel:+48889000829"
               id="navbar-phone"
               className="hidden lg:flex items-center gap-2 text-sm font-semibold text-gray-800 hover:text-[#E6007E] transition-colors duration-200"
             >
               <Phone className="w-4 h-4 text-[#E6007E]" strokeWidth={2.5} />
-              +48 123 456 789
+              +48 889 000 829
             </a>
 
             {/* Mobile menu button */}
@@ -112,13 +118,13 @@ export default function Navbar() {
             <div className="mt-auto pb-12 flex flex-col items-center gap-6">
               <div className="w-16 h-px bg-gray-200" />
               <a
-                href="tel:+48123456789"
+                href="tel:+48889000829"
                 className="inline-flex items-center gap-3 text-lg font-bold text-gray-900"
               >
                 <div className="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center">
                   <Phone className="w-5 h-5 text-[#E6007E]" strokeWidth={2.5} />
                 </div>
-                +48 123 456 789
+                +48 889 000 829
               </a>
             </div>
           </motion.div>

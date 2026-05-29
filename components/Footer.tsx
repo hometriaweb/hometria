@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 // Inline brand SVG icons — lucide-react v1 does not ship social brand icons
@@ -66,9 +67,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="inline-block">
-              <span className="text-2xl font-black tracking-tight text-white">
-                HOME<span className="text-[#E6007E]">TRIA</span>
-              </span>
+              <Image
+                src="/logo.png"
+                alt="Hometria – Biuro Nieruchomości"
+                width={140}
+                height={74}
+                className="h-10 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="text-sm leading-relaxed max-w-xs">
               Nowoczesne biuro nieruchomości specjalizujące się w kompleksowej

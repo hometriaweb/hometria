@@ -5,13 +5,11 @@ import {
   Banknote,
   Megaphone,
   UserCheck,
-  MapPin,
-  Phone,
-  Mail,
 } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import ScrollReveal from '@/components/ScrollReveal'
+import Team from '@/components/Team'
 
 export const metadata: Metadata = {
   title: 'O nas – HOMETRIA',
@@ -234,56 +232,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── Doradca / kontakt ───────────────────────────────────── */}
-        <section className="py-20 bg-gray-950">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ScrollReveal>
-              <div className="text-center mb-12">
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#E6007E] mb-3">
-                  Skontaktuj się
-                </p>
-                <h2 className="text-3xl font-extrabold text-white">
-                  Porozmawiajmy o Twojej nieruchomości
-                </h2>
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal delay={0.2}>
-              <div className="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col sm:flex-row items-center gap-8">
-                {/* Avatar */}
-                <div className="w-20 h-20 rounded-full bg-[#E6007E]/20 flex items-center justify-center shrink-0">
-                  <span className="text-3xl font-black text-[#E6007E]">AW</span>
-                </div>
-
-                {/* Info */}
-                <div className="flex-1 text-center sm:text-left">
-                  <p className="text-white font-bold text-xl">Angelika Wiórkowska</p>
-                  <p className="text-gray-400 text-sm mb-4">Doradca klienta</p>
-                  <div className="flex flex-wrap justify-center sm:justify-start gap-4">
-                    <a
-                      href="tel:+48889000829"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-[#E6007E] hover:text-pink-400 transition-colors"
-                    >
-                      <Phone className="w-4 h-4" />
-                      +48 889 000 829
-                    </a>
-                    <a
-                      href="mailto:kontakt@hometria.pl"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-gray-400 hover:text-white transition-colors"
-                    >
-                      <Mail className="w-4 h-4" />
-                      kontakt@hometria.pl
-                    </a>
-                    <span className="inline-flex items-center gap-2 text-sm text-gray-400">
-                      <MapPin className="w-4 h-4" />
-                      ul. Grunwaldzka 10, pawilon D3, 82-200 Malbork
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </section>
+        {/* ── Zespół ─────────────────────────────────────────────── */}
+        <Team />
 
       </main>
       <Footer />
