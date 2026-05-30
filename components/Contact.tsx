@@ -105,11 +105,19 @@ export default function Contact() {
               })}
             </div>
 
-            {/* Map placeholder */}
+            {/* Google Maps */}
             <ScrollReveal delay={0.8}>
-              <div className="rounded-xl overflow-hidden border border-gray-100 h-48 bg-gray-50 flex items-center justify-center text-gray-400 text-sm">
-                <MapPin className="w-5 h-5 mr-2 text-[#E6007E]" />
-                Mapa — integracja z Google Maps
+              <div className="rounded-xl overflow-hidden border border-gray-100 h-48">
+                <iframe
+                  title="Lokalizacja biura Hometria – ul. Grunwaldzka 10, Malbork"
+                  src="https://maps.google.com/maps?q=ul.+Grunwaldzka+10%2C+82-200+Malbork%2C+Polska&hl=pl&z=16&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, display: 'block' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </ScrollReveal>
           </div>

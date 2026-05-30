@@ -142,14 +142,18 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* ── Map Placeholder ───────────────────────────────────── */}
-        <section className="h-[400px] w-full bg-gray-200 relative">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <MapPin className="w-10 h-10 text-gray-400 mx-auto mb-3" />
-              <p className="text-gray-500 font-medium">Miejsce na interaktywną mapę (np. Google Maps)</p>
-            </div>
-          </div>
+        {/* ── Google Maps ───────────────────────────────────────── */}
+        <section className="h-[420px] w-full">
+          <iframe
+            title="Lokalizacja biura Hometria – ul. Grunwaldzka 10, Malbork"
+            src="https://maps.google.com/maps?q=ul.+Grunwaldzka+10%2C+82-200+Malbork%2C+Polska&hl=pl&z=16&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0, display: 'block' }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </section>
       </main>
       <Footer />
