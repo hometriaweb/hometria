@@ -113,12 +113,6 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Placeholder note */}
-        <ScrollReveal delay={0.3}>
-          <p className="text-center text-xs text-gray-400 mt-8">
-            * Przykładowe opinie — zastąp prawdziwymi recenzjami klientów
-          </p>
-        </ScrollReveal>
       </div>
     </section>
   )

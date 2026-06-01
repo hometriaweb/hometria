@@ -96,12 +96,6 @@ export default function Team({ members = defaultMembers }: TeamProps) {
           ))}
         </div>
 
-        {/* Placeholder note */}
-        <ScrollReveal delay={0.3}>
-          <p className="text-center text-xs text-gray-600 mt-8">
-            * Placeholdery — zastąp zdjęciami i danymi członków zespołu
-          </p>
-        </ScrollReveal>
       </div>
     </section>
   )
