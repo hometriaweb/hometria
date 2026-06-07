@@ -27,8 +27,7 @@ export default function Team() {
           <div className="mt-10">
             <Link
               href="/kontakt"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm text-white transition-all duration-200 active:scale-95"
-              style={{ background: 'linear-gradient(135deg, #FF1493 0%, #C89B3C 100%)' }}
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-[#FF1493] font-semibold text-sm text-white shadow-lg shadow-pink-900/30 hover:bg-[#D9007B] active:scale-95 transition-all duration-200"
             >
               Porozmawiajmy
               <ArrowRight className="w-4 h-4" />
