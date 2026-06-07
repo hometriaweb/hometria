@@ -17,14 +17,14 @@ export default function PropertyNotFound() {
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/oferty"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#E6007E] text-white font-semibold text-sm hover:bg-[#c4006b] transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#FF1493] text-white font-semibold text-sm hover:bg-[#D9007B] transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Wróć do ofert
             </Link>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border-2 border-gray-200 text-gray-700 font-semibold text-sm hover:border-[#E6007E] hover:text-[#E6007E] transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl border-2 border-gray-200 text-gray-700 font-semibold text-sm hover:border-[#FF1493] hover:text-[#FF1493] transition-colors"
             >
               <Home className="w-4 h-4" />
               Strona główna

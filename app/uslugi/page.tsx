@@ -65,11 +65,11 @@ export default function ServicesPage() {
             <div className="grid sm:grid-cols-2 gap-5">
               {services.map((service, index) => (
                 <ScrollReveal key={index} delay={0.1 * index}>
-                  <div className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-[#E6007E]/20 hover:shadow-md transition-all duration-300 h-full flex flex-col">
+                  <div className="group bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:border-[#FF1493]/20 hover:shadow-md transition-all duration-300 h-full flex flex-col">
                     {/* Icon + title row */}
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center shrink-0 group-hover:bg-[#E6007E] transition-colors duration-300">
-                        <service.icon className="w-5 h-5 text-[#E6007E] group-hover:text-white transition-colors duration-300" strokeWidth={1.75} />
+                      <div className="w-10 h-10 rounded-xl bg-pink-50 flex items-center justify-center shrink-0 group-hover:bg-[#FF1493] transition-colors duration-300">
+                        <service.icon className="w-5 h-5 text-[#FF1493] group-hover:text-white transition-colors duration-300" strokeWidth={1.75} />
                       </div>
                       <h2 className="text-base font-bold text-gray-900 leading-snug pt-1.5">
                         {service.title}
@@ -84,7 +84,7 @@ export default function ServicesPage() {
                     {/* CTA */}
                     <Link
                       href="/kontakt"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E6007E] hover:text-[#c4006b] transition-colors group/link"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#FF1493] hover:text-[#D9007B] transition-colors group/link"
                     >
                       Zapytaj o szczegóły
                       <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
@@ -112,7 +112,7 @@ export default function ServicesPage() {
               <ScrollReveal delay={0.3}>
                 <Link
                   href="/kontakt"
-                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#E6007E] text-white font-semibold shadow-lg shadow-[#E6007E]/20 hover:bg-[#c4006b] hover:scale-105 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-[#FF1493] text-white font-semibold shadow-lg shadow-[#FF1493]/20 hover:bg-[#D9007B] hover:scale-105 transition-all duration-300"
                 >
                   Zamów bezpłatną wycenę
                 </Link>

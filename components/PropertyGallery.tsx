@@ -118,11 +118,11 @@ export default function PropertyGallery({ images, title }: PropertyGalleryProps)
               key={i}
               onClick={() => setPage([i, i > imageIndex ? 1 : -1])}
               className={`relative shrink-0 w-20 h-14 rounded-lg overflow-hidden border-2 transition-colors ${
-                i === imageIndex ? 'border-[#E6007E]' : 'border-transparent hover:border-gray-300'
+                i === imageIndex ? 'border-[#FF1493]' : 'border-transparent hover:border-gray-300'
               }`}
             >
               <Image src={src} alt="" fill className="object-cover" sizes="80px" />
-              {i === imageIndex && <div className="absolute inset-0 bg-[#E6007E]/10" />}
+              {i === imageIndex && <div className="absolute inset-0 bg-[#FF1493]/10" />}
             </button>
           ))}
         </div>

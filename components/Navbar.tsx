@@ -56,11 +56,11 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-gray-600 hover:text-[#E6007E] transition-colors duration-200 relative group"
+                  className="text-sm font-medium text-gray-600 hover:text-[#FF1493] transition-colors duration-200 relative group"
                 >
                   {link.label}
                   <span
-                    className={`absolute -bottom-0.5 left-0 h-0.5 bg-[#E6007E] transition-all duration-300 ${
+                    className={`absolute -bottom-0.5 left-0 h-0.5 bg-[#FF1493] transition-all duration-300 ${
                       pathname === link.href ? 'w-full' : 'w-0 group-hover:w-full'
                     }`}
                   />
@@ -72,9 +72,9 @@ export default function Navbar() {
             <a
               href="tel:+48889000829"
               id="navbar-phone"
-              className="hidden lg:flex items-center gap-2 text-sm font-semibold text-gray-800 hover:text-[#E6007E] transition-colors duration-200"
+              className="hidden lg:flex items-center gap-2 text-sm font-semibold text-gray-800 hover:text-[#FF1493] transition-colors duration-200"
             >
-              <Phone className="w-4 h-4 text-[#E6007E]" strokeWidth={2.5} />
+              <Phone className="w-4 h-4 text-[#FF1493]" strokeWidth={2.5} />
               +48 889 000 829
             </a>
 
@@ -82,7 +82,7 @@ export default function Navbar() {
             <button
               id="mobile-menu-toggle"
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-md text-gray-600 hover:text-[#E6007E] hover:bg-pink-50 transition-colors"
+              className="lg:hidden p-2 rounded-md text-gray-600 hover:text-[#FF1493] hover:bg-pink-50 transition-colors"
               aria-label={isOpen ? 'Zamknij menu' : 'Otwórz menu'}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -107,7 +107,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   className={`text-2xl font-bold transition-colors ${
-                    pathname === link.href ? 'text-[#E6007E]' : 'text-gray-900 hover:text-[#E6007E]'
+                    pathname === link.href ? 'text-[#FF1493]' : 'text-gray-900 hover:text-[#FF1493]'
                   }`}
                 >
                   {link.label}
@@ -122,7 +122,7 @@ export default function Navbar() {
                 className="inline-flex items-center gap-3 text-lg font-bold text-gray-900"
               >
                 <div className="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-[#E6007E]" strokeWidth={2.5} />
+                  <Phone className="w-5 h-5 text-[#FF1493]" strokeWidth={2.5} />
                 </div>
                 +48 889 000 829
               </a>

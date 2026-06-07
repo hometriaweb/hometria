@@ -76,7 +76,7 @@ export default function ContactPage() {
                     <ScrollReveal key={i} delay={0.2 + 0.1 * i}>
                       <div className="flex gap-4">
                         <div className="w-12 h-12 rounded-xl bg-pink-50 flex items-center justify-center shrink-0">
-                          <item.icon className="w-5 h-5 text-[#E6007E]" strokeWidth={2} />
+                          <item.icon className="w-5 h-5 text-[#FF1493]" strokeWidth={2} />
                         </div>
                         <div>
                           <p className="text-sm font-semibold text-gray-500 mb-1">
@@ -85,7 +85,7 @@ export default function ContactPage() {
                           {item.href ? (
                             <a
                               href={item.href}
-                              className="text-lg font-bold text-gray-900 hover:text-[#E6007E] transition-colors whitespace-pre-line"
+                              className="text-lg font-bold text-gray-900 hover:text-[#FF1493] transition-colors whitespace-pre-line"
                               target={item.icon === MapPin ? '_blank' : undefined}
                               rel={item.icon === MapPin ? 'noopener noreferrer' : undefined}
                             >
@@ -114,7 +114,7 @@ export default function ContactPage() {
                       <a
                         key={social}
                         href="#"
-                        className="px-4 py-2 rounded-lg bg-gray-50 text-gray-600 font-medium text-sm hover:bg-[#E6007E] hover:text-white transition-colors"
+                        className="px-4 py-2 rounded-lg bg-gray-50 text-gray-600 font-medium text-sm hover:bg-[#FF1493] hover:text-white transition-colors"
                       >
                         {social}
                       </a>

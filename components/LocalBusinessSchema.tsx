@@ -11,7 +11,7 @@ const schema = {
     width: 200,
     height: 60,
   },
-  image: 'https://hometria.pl/hero-interior.jpg',
+  image: 'https://hometria.pl/hero-interior.png',
   description:
     'Profesjonalne biuro nieruchomości. Sprzedaż, wynajem i odkup mieszkań, domów i działek. Ponad 12 lat doświadczenia.',
   address: {

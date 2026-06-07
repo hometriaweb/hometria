@@ -36,13 +36,10 @@ export default function Services() {
         {/* Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#E6007E] mb-3">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#FF1493] mb-4">
               Czym się zajmujemy
             </p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
-              Pełen zakres usług nieruchomościowych
-            </h2>
-            <p className="text-gray-500 max-w-xl mx-auto">
+            <p className="text-xl sm:text-2xl font-semibold text-gray-800 max-w-xl mx-auto leading-snug">
               Hometria to nie tylko pośrednictwo – to kompleksowe wsparcie
               na każdym etapie transakcji.
             </p>
@@ -56,18 +53,18 @@ export default function Services() {
             return (
               <ScrollReveal key={service.title} delay={0.1 * index}>
                 <div
-                  className="group h-full flex flex-col items-center text-center p-6 rounded-2xl border border-gray-100 bg-gray-50/50 hover:border-[#E6007E]/30 hover:bg-pink-50/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default"
+                  className="group h-full flex flex-col items-center text-center p-6 rounded-2xl border border-gray-100 bg-gray-50/50 hover:border-[#FF1493]/30 hover:bg-pink-50/30 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-default"
                 >
-                  <div className="w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center mb-4 group-hover:bg-[#E6007E] transition-colors duration-300">
+                  <div className="w-14 h-14 rounded-xl bg-white shadow-sm flex items-center justify-center mb-4 group-hover:bg-[#FF1493] transition-colors duration-300">
                     <Icon
-                      className="w-6 h-6 text-[#E6007E] group-hover:text-white transition-colors duration-300"
+                      className="w-6 h-6 text-[#FF1493] group-hover:text-white transition-colors duration-300"
                       strokeWidth={1.75}
                     />
                   </div>
                   <h3 className="font-bold text-gray-900 text-sm mb-2 leading-snug">
                     {service.title}
                   </h3>
-                  <p className="text-xs text-gray-500 leading-relaxed">{service.description}</p>
+                  <p className="text-xs text-gray-600 leading-relaxed">{service.description}</p>
                 </div>
               </ScrollReveal>
             )

@@ -38,7 +38,7 @@ export async function sendContactEmail(data: ContactPayload) {
     subject: `Nowe zapytanie od ${name}`,
     html: `
       <div style="font-family:sans-serif;max-width:600px;margin:0 auto;color:#111">
-        <div style="background:#E6007E;padding:24px 32px;border-radius:12px 12px 0 0">
+        <div style="background:#FF1493;padding:24px 32px;border-radius:12px 12px 0 0">
           <h1 style="margin:0;color:#fff;font-size:20px;font-weight:700">Nowe zapytanie — Hometria</h1>
         </div>
         <div style="background:#f9f9f9;padding:32px;border:1px solid #eee;border-top:none;border-radius:0 0 12px 12px">
@@ -49,7 +49,7 @@ export async function sendContactEmail(data: ContactPayload) {
             </tr>
             <tr>
               <td style="padding:8px 0;color:#666;font-size:13px;vertical-align:top">E-mail</td>
-              <td style="padding:8px 0;font-size:14px"><a href="mailto:${email}" style="color:#E6007E">${email}</a></td>
+              <td style="padding:8px 0;font-size:14px"><a href="mailto:${email}" style="color:#FF1493">${email}</a></td>
             </tr>
             ${phone ? `
             <tr>

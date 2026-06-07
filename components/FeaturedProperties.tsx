@@ -11,26 +11,29 @@ export default async function FeaturedProperties() {
     <section id="wybrane-nieruchomosci" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
-          <div>
-            <ScrollReveal>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#E6007E] mb-3">
+        <div className="text-center mb-12">
+          <ScrollReveal>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C89B3C]/30 bg-[#C89B3C]/5 mb-5">
+              <span className="text-xs font-semibold uppercase tracking-widest" style={{ color: '#C89B3C' }}>
                 Nasza oferta
-              </p>
-            </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
-                Promowane oferty nieruchomości
-              </h2>
-            </ScrollReveal>
-          </div>
+              </span>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <h2
+              className="text-3xl sm:text-4xl font-extrabold bg-clip-text text-transparent mb-6"
+              style={{ backgroundImage: 'linear-gradient(135deg, #FF1493 20%, #C89B3C 100%)' }}
+            >
+              Promowane oferty nieruchomości
+            </h2>
+          </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <Link
               href="/oferty"
               id="featured-see-all"
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-[#E6007E] transition-colors duration-200 shrink-0"
+              className="group inline-flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-[#FF1493] transition-colors duration-200"
             >
-              Zobacz więcej
+              Zobacz wszystkie oferty
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </ScrollReveal>

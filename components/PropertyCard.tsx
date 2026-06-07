@@ -29,7 +29,7 @@ function resolveImageSrc(mainImage: Property['mainImage']): string {
 
 
 const categoryColors: Record<Property['category'], string> = {
-  Mieszkanie: 'bg-[#E6007E] text-white',
+  Mieszkanie: 'bg-[#FF1493] text-white',
   Dom: 'bg-emerald-600 text-white',
   Działka: 'bg-amber-500 text-white',
   'Lokale komercyjne': 'bg-blue-600 text-white',
@@ -88,7 +88,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
 
         {/* Location */}
         <div className="flex items-center gap-1.5 text-gray-500 text-sm">
-          <MapPin className="w-3.5 h-3.5 shrink-0 text-[#E6007E]" />
+          <MapPin className="w-3.5 h-3.5 shrink-0 text-[#FF1493]" />
           <span className="truncate">{property.location}</span>
         </div>
 
@@ -118,7 +118,7 @@ export function PropertyCard({ property }: PropertyCardProps) {
             href={`/oferty/${slug}`}
             id={`property-card-${property._id}`}
             aria-label={`Zobacz szczegóły: ${property.title}`}
-            className="inline-flex items-center gap-1 text-xs font-semibold text-[#E6007E] hover:text-[#c4006b] transition-colors"
+            className="inline-flex items-center gap-1 text-xs font-semibold text-[#FF1493] hover:text-[#D9007B] transition-colors"
           >
             Szczegóły
             <ArrowUpRight className="w-3.5 h-3.5" />

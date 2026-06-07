@@ -83,7 +83,7 @@ export default function Footer() {
               <p className="font-medium text-gray-300">HOMETRIA</p>
               <p>ul. Grunwaldzka 10, pawilon D3</p>
               <p>82-200 Malbork</p>
-              <a href="tel:+48889000829" className="block hover:text-[#E6007E] transition-colors">
+              <a href="tel:+48889000829" className="block hover:text-[#FF1493] transition-colors">
                 +48 889 000 829
               </a>
             </div>
@@ -96,7 +96,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#E6007E] hover:text-white transition-all duration-200"
+                  className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center text-gray-400 hover:bg-[#FF1493] hover:text-white transition-all duration-200"
                 >
                   <Icon />
                 </a>
@@ -112,7 +112,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm hover:text-[#E6007E] transition-colors duration-200"
+                    className="text-sm hover:text-[#FF1493] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -129,7 +129,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm hover:text-[#E6007E] transition-colors duration-200"
+                    className="text-sm hover:text-[#FF1493] transition-colors duration-200"
                   >
                     {link.label}
                   </Link>

@@ -16,43 +16,29 @@ export default function Hero() {
 
             <ScrollReveal delay={0.2}>
               <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold leading-[1.1] tracking-tight text-gray-900">
-                Sprzedaj nieruchomość{' '}
-                <span className="text-[#E6007E]">szybciej</span>{' '}
-                i za lepszą cenę
+                Sprzedaj z nami nieruchomość{' '}
+                <span className="text-[#FF1493]">szybciej</span>{' '}
+                i za{' '}
+                <span className="text-[#FF1493]">lepszą</span>{' '}
+                cenę
               </h1>
             </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
-              <p className="text-lg text-gray-500 leading-relaxed max-w-lg">
+              <p className="text-lg text-gray-700 leading-relaxed max-w-lg">
                 Pomagamy sprzedać nieruchomość bez stresu i zbędnych formalności.
                 Towarzyszymy Państwu na każdym etapie transakcji – od pierwszej
                 rozmowy aż po bezpieczne przekazanie nieruchomości.
               </p>
             </ScrollReveal>
 
-            {/* Stats row */}
-            <ScrollReveal delay={0.4}>
-              <div className="flex flex-wrap gap-8">
-                {[
-                  { value: '250+', label: 'Zrealizowanych transakcji' },
-                  { value: '12', label: 'Lat doświadczenia' },
-                  { value: '98%', label: 'Zadowolonych klientów' },
-                ].map((stat) => (
-                  <div key={stat.label}>
-                    <p className="text-2xl font-black text-gray-900">{stat.value}</p>
-                    <p className="text-sm text-gray-500">{stat.label}</p>
-                  </div>
-                ))}
-              </div>
-            </ScrollReveal>
-
             {/* CTA buttons */}
-            <ScrollReveal delay={0.5}>
+            <ScrollReveal delay={0.4}>
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/oferty"
                   id="hero-cta-sell"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#E6007E] text-white font-semibold text-sm shadow-lg shadow-pink-200 hover:bg-[#c4006b] active:scale-95 transition-all duration-200"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF1493] text-white font-semibold text-sm shadow-lg shadow-pink-200 hover:bg-[#D9007B] active:scale-95 transition-all duration-200"
                 >
                   Sprzedaj nieruchomość
                   <ArrowRight className="w-4 h-4" />
@@ -73,7 +59,7 @@ export default function Hero() {
           <ScrollReveal delay={0.6} className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
               <Image
-                src="/hero-interior.jpg"
+                src="/hero-interior.png"
                 alt="Nowoczesne wnętrze mieszkania na sprzedaż – Biuro Nieruchomości Hometria"
                 fill
                 className="object-cover"
@@ -87,7 +73,7 @@ export default function Hero() {
             {/* Floating badge */}
             <div className="absolute -bottom-5 -left-5 bg-white rounded-xl shadow-xl px-5 py-3.5 flex items-center gap-3 border border-gray-100">
               <div className="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center shrink-0">
-                <span className="text-[#E6007E] text-lg">★</span>
+                <span className="text-[#FF1493] text-lg">★</span>
               </div>
               <div>
                 <p className="text-xs text-gray-500">Średnia ocena klientów</p>

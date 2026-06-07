@@ -50,7 +50,7 @@ function sortProperties(properties: Property[], sortBy: SortOption): Property[] 
 // ─── Filter chip ──────────────────────────────────────────────────────────────
 function Chip({ label, onRemove }: { label: string; onRemove: () => void }) {
   return (
-    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-50 border border-pink-100 text-xs font-medium text-[#E6007E]">
+    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-50 border border-pink-100 text-xs font-medium text-[#FF1493]">
       {label}
       <button onClick={onRemove} aria-label={`Usuń filtr: ${label}`}>
         <X className="w-3 h-3" />
@@ -74,8 +74,8 @@ function ToggleBtn({
       onClick={onClick}
       className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
         active
-          ? 'border-[#E6007E] bg-[#E6007E] text-white'
-          : 'border-gray-200 bg-white text-gray-600 hover:border-[#E6007E] hover:text-[#E6007E]'
+          ? 'border-[#FF1493] bg-[#FF1493] text-white'
+          : 'border-gray-200 bg-white text-gray-600 hover:border-[#FF1493] hover:text-[#FF1493]'
       }`}
     >
       {children}
@@ -143,7 +143,7 @@ export default function PropertyListings({ properties }: { properties: Property[
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* ── Page header ──────────────────────────────────────────── */}
       <motion.div {...fadeUp(0)} className="mb-10">
-        <p className="text-xs font-semibold uppercase tracking-widest text-[#E6007E] mb-2">
+        <p className="text-xs font-semibold uppercase tracking-widest text-[#FF1493] mb-2">
           Nasza baza
         </p>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
@@ -162,7 +162,7 @@ export default function PropertyListings({ properties }: { properties: Property[
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Szukaj po nazwie lub lokalizacji…"
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#E6007E] focus:ring-2 focus:ring-[#E6007E]/20 transition-all"
+            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#FF1493] focus:ring-2 focus:ring-[#FF1493]/20 transition-all"
           />
         </div>
 
@@ -172,14 +172,14 @@ export default function PropertyListings({ properties }: { properties: Property[
           onClick={() => setShowFilters((s) => !s)}
           className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border text-sm font-medium transition-colors ${
             showFilters || activeChips.length > 0
-              ? 'border-[#E6007E] bg-[#E6007E] text-white'
-              : 'border-gray-200 bg-white text-gray-700 hover:border-[#E6007E] hover:text-[#E6007E]'
+              ? 'border-[#FF1493] bg-[#FF1493] text-white'
+              : 'border-gray-200 bg-white text-gray-700 hover:border-[#FF1493] hover:text-[#FF1493]'
           }`}
         >
           <SlidersHorizontal className="w-4 h-4" />
           Filtry
           {activeChips.length > 0 && (
-            <span className="w-5 h-5 rounded-full bg-white text-[#E6007E] text-xs font-bold flex items-center justify-center">
+            <span className="w-5 h-5 rounded-full bg-white text-[#FF1493] text-xs font-bold flex items-center justify-center">
               {activeChips.length}
             </span>
           )}
@@ -191,7 +191,7 @@ export default function PropertyListings({ properties }: { properties: Property[
             id="sort-select"
             value={sortBy}
             onChange={(e) => setSortBy(e.target.value as SortOption)}
-            className="appearance-none pl-4 pr-9 py-2.5 rounded-xl border border-gray-200 bg-white text-sm font-medium text-gray-700 focus:outline-none focus:border-[#E6007E] cursor-pointer"
+            className="appearance-none pl-4 pr-9 py-2.5 rounded-xl border border-gray-200 bg-white text-sm font-medium text-gray-700 focus:outline-none focus:border-[#FF1493] cursor-pointer"
           >
             {SORT_OPTIONS.map((o) => (
               <option key={o.value} value={o.value}>{o.label}</option>
@@ -215,7 +215,7 @@ export default function PropertyListings({ properties }: { properties: Property[
             {activeChips.length > 0 && (
               <button
                 onClick={clearFilters}
-                className="inline-flex items-center gap-1.5 text-xs text-[#E6007E] font-medium hover:underline"
+                className="inline-flex items-center gap-1.5 text-xs text-[#FF1493] font-medium hover:underline"
               >
                 <X className="w-3.5 h-3.5" />
                 Wyczyść wszystkie
@@ -275,7 +275,7 @@ export default function PropertyListings({ properties }: { properties: Property[
                   onChange={(e) =>
                     update('priceMin', e.target.value ? Number(e.target.value) : undefined)
                   }
-                  className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#E6007E] focus:ring-1 focus:ring-[#E6007E]/20"
+                  className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#FF1493] focus:ring-1 focus:ring-[#FF1493]/20"
                 />
                 <span className="text-gray-400 shrink-0 text-xs">–</span>
                 <input
@@ -287,7 +287,7 @@ export default function PropertyListings({ properties }: { properties: Property[
                   onChange={(e) =>
                     update('priceMax', e.target.value ? Number(e.target.value) : undefined)
                   }
-                  className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#E6007E] focus:ring-1 focus:ring-[#E6007E]/20"
+                  className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#FF1493] focus:ring-1 focus:ring-[#FF1493]/20"
                 />
               </div>
             </div>
@@ -307,7 +307,7 @@ export default function PropertyListings({ properties }: { properties: Property[
                   onChange={(e) =>
                     update('areaMin', e.target.value ? Number(e.target.value) : undefined)
                   }
-                  className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#E6007E] focus:ring-1 focus:ring-[#E6007E]/20"
+                  className="w-full px-3 py-2 rounded-lg border border-gray-200 text-sm focus:outline-none focus:border-[#FF1493] focus:ring-1 focus:ring-[#FF1493]/20"
                 />
               </div>
               <div>
@@ -350,7 +350,7 @@ export default function PropertyListings({ properties }: { properties: Property[
           </p>
           <button
             onClick={clearFilters}
-            className="px-6 py-3 rounded-xl bg-[#E6007E] text-white font-semibold text-sm hover:bg-[#c4006b] transition-colors"
+            className="px-6 py-3 rounded-xl bg-[#FF1493] text-white font-semibold text-sm hover:bg-[#D9007B] transition-colors"
           >
             Wyczyść filtry
           </button>

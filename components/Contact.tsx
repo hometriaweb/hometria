@@ -36,7 +36,7 @@ export default function Contact() {
         {/* Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#E6007E] mb-3">
+            <p className="text-xs font-semibold uppercase tracking-widest text-[#FF1493] mb-3">
               Skontaktuj się
             </p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
@@ -75,7 +75,7 @@ export default function Contact() {
                 const content = (
                   <div className="flex items-start gap-4">
                     <div className="w-11 h-11 rounded-xl bg-pink-50 flex items-center justify-center shrink-0">
-                      <Icon className="w-5 h-5 text-[#E6007E]" strokeWidth={1.75} />
+                      <Icon className="w-5 h-5 text-[#FF1493]" strokeWidth={1.75} />
                     </div>
                     <div>
                       <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-0.5">

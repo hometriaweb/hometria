@@ -34,14 +34,14 @@ export default function ContactForm() {
   if (state === 'success') {
     return (
       <div className="flex flex-col items-center justify-center gap-4 py-16 text-center">
-        <CheckCircle className="w-16 h-16 text-[#E6007E]" strokeWidth={1.5} />
+        <CheckCircle className="w-16 h-16 text-[#FF1493]" strokeWidth={1.5} />
         <h3 className="text-xl font-bold text-gray-900">Wiadomość wysłana!</h3>
         <p className="text-gray-500 max-w-xs">
           Dziękujemy za kontakt. Odezwiemy się do Ciebie w ciągu 24 godzin.
         </p>
         <button
           onClick={() => { setState('idle'); setForm({ name: '', email: '', phone: '', message: '' }) }}
-          className="mt-2 text-sm text-[#E6007E] font-semibold hover:underline"
+          className="mt-2 text-sm text-[#FF1493] font-semibold hover:underline"
         >
           Wyślij kolejną wiadomość
         </button>
@@ -55,7 +55,7 @@ export default function ContactForm() {
         {/* Name */}
         <div>
           <label htmlFor={`${formId}-name`} className="block text-sm font-medium text-gray-700 mb-1.5">
-            Imię i nazwisko <span className="text-[#E6007E]">*</span>
+            Imię i nazwisko <span className="text-[#FF1493]">*</span>
           </label>
           <input
             id={`${formId}-name`}
@@ -66,13 +66,13 @@ export default function ContactForm() {
             value={form.name}
             onChange={handleChange}
             placeholder="Jan Kowalski"
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[#E6007E] focus:ring-2 focus:ring-[#E6007E]/20 transition-all duration-200"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[#FF1493] focus:ring-2 focus:ring-[#FF1493]/20 transition-all duration-200"
           />
         </div>
         {/* Email */}
         <div>
           <label htmlFor={`${formId}-email`} className="block text-sm font-medium text-gray-700 mb-1.5">
-            Adres e-mail <span className="text-[#E6007E]">*</span>
+            Adres e-mail <span className="text-[#FF1493]">*</span>
           </label>
           <input
             id={`${formId}-email`}
@@ -83,7 +83,7 @@ export default function ContactForm() {
             value={form.email}
             onChange={handleChange}
             placeholder="jan@example.com"
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[#E6007E] focus:ring-2 focus:ring-[#E6007E]/20 transition-all duration-200"
+            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[#FF1493] focus:ring-2 focus:ring-[#FF1493]/20 transition-all duration-200"
           />
         </div>
       </div>
@@ -101,14 +101,14 @@ export default function ContactForm() {
           value={form.phone}
           onChange={handleChange}
           placeholder="+48 123 456 789"
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[#E6007E] focus:ring-2 focus:ring-[#E6007E]/20 transition-all duration-200"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[#FF1493] focus:ring-2 focus:ring-[#FF1493]/20 transition-all duration-200"
         />
       </div>
 
       {/* Message */}
       <div>
         <label htmlFor={`${formId}-message`} className="block text-sm font-medium text-gray-700 mb-1.5">
-          Wiadomość <span className="text-[#E6007E]">*</span>
+          Wiadomość <span className="text-[#FF1493]">*</span>
         </label>
         <textarea
           id={`${formId}-message`}
@@ -118,7 +118,7 @@ export default function ContactForm() {
           value={form.message}
           onChange={handleChange}
           placeholder="Opisz swoją nieruchomość lub zadaj pytanie…"
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[#E6007E] focus:ring-2 focus:ring-[#E6007E]/20 transition-all duration-200 resize-none"
+          className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-gray-900 text-sm placeholder:text-gray-400 focus:outline-none focus:border-[#FF1493] focus:ring-2 focus:ring-[#FF1493]/20 transition-all duration-200 resize-none"
         />
       </div>
 
@@ -133,7 +133,7 @@ export default function ContactForm() {
         type="submit"
         id="contact-form-submit"
         disabled={state === 'loading'}
-        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#E6007E] text-white font-semibold text-sm shadow-lg shadow-pink-200 hover:bg-[#c4006b] active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200"
+        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#FF1493] text-white font-semibold text-sm shadow-lg shadow-pink-200 hover:bg-[#D9007B] active:scale-95 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-200"
       >
         {state === 'loading' ? (
           <>
@@ -150,7 +150,7 @@ export default function ContactForm() {
 
       <p className="text-xs text-gray-400 text-center">
         Twoje dane są chronione zgodnie z{' '}
-        <a href="/polityka-prywatnosci" className="underline hover:text-[#E6007E]">
+        <a href="/polityka-prywatnosci" className="underline hover:text-[#FF1493]">
           Polityką Prywatności
         </a>
         .

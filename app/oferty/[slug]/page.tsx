@@ -153,7 +153,7 @@ function resolveImages(property: Property): string[] {
 }
 
 const categoryColors: Record<Property['category'], string> = {
-  Mieszkanie: 'bg-[#E6007E]/10 text-[#E6007E]',
+  Mieszkanie: 'bg-[#FF1493]/10 text-[#FF1493]',
   Dom: 'bg-emerald-50 text-emerald-700',
   Działka: 'bg-amber-50 text-amber-700',
   'Lokale komercyjne': 'bg-blue-50 text-blue-700',
@@ -172,7 +172,7 @@ function Stat({
   return (
     <div className="flex items-center gap-3 py-3 border-b border-gray-100 last:border-0">
       <div className="w-9 h-9 rounded-lg bg-pink-50 flex items-center justify-center shrink-0">
-        <Icon className="w-4 h-4 text-[#E6007E]" strokeWidth={1.75} />
+        <Icon className="w-4 h-4 text-[#FF1493]" strokeWidth={1.75} />
       </div>
       <div>
         <p className="text-[10px] font-semibold uppercase tracking-widest text-gray-400">{label}</p>
@@ -212,11 +212,11 @@ export default async function PropertyDetailPage({
         {/* ── Breadcrumb ─────────────────────────────────────── */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-gray-500">
-            <Link href="/" className="hover:text-[#E6007E] transition-colors">
+            <Link href="/" className="hover:text-[#FF1493] transition-colors">
               Strona główna
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-gray-300" />
-            <Link href="/oferty" className="hover:text-[#E6007E] transition-colors">
+            <Link href="/oferty" className="hover:text-[#FF1493] transition-colors">
               Oferty
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-gray-300" />
@@ -244,14 +244,14 @@ export default async function PropertyDetailPage({
               </div>
               <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900">{p.title}</h1>
               <div className="flex items-center gap-1.5 mt-2 text-gray-500">
-                <MapPin className="w-4 h-4 text-[#E6007E]" />
+                <MapPin className="w-4 h-4 text-[#FF1493]" />
                 <span className="text-sm">{p.location}</span>
               </div>
             </div>
 
             <Link
               href="/oferty"
-              className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#E6007E] transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-[#FF1493] transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />
               Wróć do ofert
@@ -281,7 +281,7 @@ export default async function PropertyDetailPage({
                   <a
                     href="tel:+48889000829"
                     id="property-call-cta"
-                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#E6007E] text-white font-semibold text-sm shadow-lg shadow-pink-200 hover:bg-[#c4006b] active:scale-95 transition-all duration-200"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#FF1493] text-white font-semibold text-sm shadow-lg shadow-pink-200 hover:bg-[#D9007B] active:scale-95 transition-all duration-200"
                   >
                     <Phone className="w-4 h-4" />
                     Zadzwoń: +48 889 000 829
@@ -289,7 +289,7 @@ export default async function PropertyDetailPage({
                   <a
                     href="#kontakt-formularz"
                     id="property-contact-cta"
-                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border-2 border-gray-200 text-gray-800 font-semibold text-sm hover:border-[#E6007E] hover:text-[#E6007E] active:scale-95 transition-all duration-200"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border-2 border-gray-200 text-gray-800 font-semibold text-sm hover:border-[#FF1493] hover:text-[#FF1493] active:scale-95 transition-all duration-200"
                   >
                     <Mail className="w-4 h-4" />
                     Napisz do nas
@@ -323,8 +323,8 @@ export default async function PropertyDetailPage({
                   Twój doradca
                 </p>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#E6007E]/20 flex items-center justify-center shrink-0">
-                    <span className="text-[#E6007E] font-black text-lg">H</span>
+                  <div className="w-12 h-12 rounded-full bg-[#FF1493]/20 flex items-center justify-center shrink-0">
+                    <span className="text-[#FF1493] font-black text-lg">H</span>
                   </div>
                   <div>
                     <p className="font-bold text-white text-sm">Zespół Hometria</p>
@@ -333,7 +333,7 @@ export default async function PropertyDetailPage({
                 </div>
                 <a
                   href="mailto:kontakt@hometria.pl"
-                  className="text-xs text-gray-400 hover:text-[#E6007E] transition-colors"
+                  className="text-xs text-gray-400 hover:text-[#FF1493] transition-colors"
                 >
                   kontakt@hometria.pl
                 </a>
@@ -348,7 +348,7 @@ export default async function PropertyDetailPage({
             aria-labelledby="contact-section-title"
           >
             <div className="text-center mb-10">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#E6007E] mb-2">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#FF1493] mb-2">
                 Zainteresowany ofertą?
               </p>
               <h2 id="contact-section-title" className="text-2xl sm:text-3xl font-extrabold text-gray-900">

@@ -82,7 +82,7 @@ export default function AboutPage() {
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-pink-100/50 blur-3xl pointer-events-none" />
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <ScrollReveal delay={0.1}>
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#E6007E] mb-3">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#FF1493] mb-3">
                 Kim jesteśmy
               </p>
             </ScrollReveal>
@@ -158,7 +158,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ScrollReveal>
               <div className="text-center max-w-2xl mx-auto mb-16">
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#E6007E] mb-3">
+                <p className="text-xs font-semibold uppercase tracking-widest text-[#FF1493] mb-3">
                   Nasze atuty
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
@@ -172,10 +172,10 @@ export default function AboutPage() {
                 <ScrollReveal key={i} delay={0.05 * i}>
                   <div className="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm h-full flex flex-col gap-4">
                     <div className="w-12 h-12 rounded-xl bg-pink-50 flex items-center justify-center shrink-0">
-                      <reason.icon className="w-6 h-6 text-[#E6007E]" strokeWidth={1.5} />
+                      <reason.icon className="w-6 h-6 text-[#FF1493]" strokeWidth={1.5} />
                     </div>
                     <div>
-                      <p className="text-[11px] font-bold uppercase tracking-widest text-[#E6007E] mb-1">
+                      <p className="text-[11px] font-bold uppercase tracking-widest text-[#FF1493] mb-1">
                         {i + 1 < 10 ? `0${i + 1}` : i + 1}
                       </p>
                       <h3 className="text-base font-bold text-gray-900 mb-2">{reason.title}</h3>
@@ -193,7 +193,7 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <ScrollReveal>
               <div className="mb-10">
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#E6007E] mb-3">
+                <p className="text-xs font-semibold uppercase tracking-widest text-[#FF1493] mb-3">
                   Formalności
                 </p>
                 <h2 className="text-3xl font-extrabold text-gray-900 mb-6">
@@ -211,7 +211,7 @@ export default function AboutPage() {
                   {formalSupport.map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-gray-600">
                       <span className="mt-1 w-5 h-5 rounded-full bg-pink-50 border border-pink-100 flex items-center justify-center shrink-0">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#E6007E]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#FF1493]" />
                       </span>
                       {item}
                     </li>

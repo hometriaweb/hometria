@@ -28,8 +28,8 @@ export default function PrivacyPolicyPage() {
               <h2 className="text-xl font-bold text-gray-900 mb-3">2. Administrator danych osobowych</h2>
               <p>
                 Administratorem Twoich danych osobowych jest HOMETRIA z siedzibą w Malborku przy ul. Grunwaldzkiej 10, pawilon D3, 82-200 Malbork. Możesz się z nami skontaktować pisząc na adres e-mail:{' '}
-                <a href="mailto:kontakt@hometria.pl" className="text-[#E6007E] hover:underline">kontakt@hometria.pl</a>{' '}
-                lub telefonicznie: <a href="tel:+48889000829" className="text-[#E6007E] hover:underline">+48 889 000 829</a>.
+                <a href="mailto:kontakt@hometria.pl" className="text-[#FF1493] hover:underline">kontakt@hometria.pl</a>{' '}
+                lub telefonicznie: <a href="tel:+48889000829" className="text-[#FF1493] hover:underline">+48 889 000 829</a>.
               </p>
             </section>
 
