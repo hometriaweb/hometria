@@ -24,7 +24,7 @@ const contactDetails = [
   {
     icon: Clock,
     label: 'Godziny pracy',
-    value: 'Pon – Pt: 9:00–18:00, Sob: 10:00–14:00',
+    value: 'Pon – Pt: 9:00–16:00, Sob: 10:00–14:00',
     href: null,
   },
 ]

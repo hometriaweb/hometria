@@ -26,15 +26,15 @@ const services = [
   },
   {
     icon: Coins,
-    title: 'Szybki skup nieruchomości (Flipy)',
+    title: 'Szybki skup nieruchomości',
     description:
-      'Potrzebujesz gotówki natychmiast? Zdecyduj się na bezpośredni odkup nieruchomości. Kupujemy mieszkania zadłużone, do generalnego remontu lub ze skomplikowanym stanem prawnym. Otrzymujesz wycenę w 24 godziny, a pieniądze bezpiecznie trafiają na Twoje konto od razu po akcie notarialnym.',
+      'Potrzebujesz gotówki natychmiast? Zdecyduj się na bezpośredni odkup nieruchomości. Kupujemy mieszkania zadłużone, do generalnego remontu lub ze skomplikowanym stanem prawnym. Przygotowujemy indywidualną wycenę nawet w 24 godziny oraz zapewniamy sprawną i bezpieczną finalizację transakcji.',
   },
   {
     icon: Scale,
     title: 'Wsparcie prawne i doradztwo kredytowe',
     description:
-      'Każda transakcja nadzorowana jest przez nasz dział prawny. Prostujemy skomplikowane stany prawne (spadki, darowizny, zajęcia komornicze). Dodatkowo współpracujemy z niezależnymi doradcami kredytowymi, co gwarantuje naszym klientom najkorzystniejsze warunki finansowania na rynku.',
+      'Współpracujemy z kancelariami prawnymi oraz doradcami kredytowymi, dzięki czemu nasi klienci mogą liczyć na kompleksowe wsparcie podczas całego procesu zakupu lub sprzedaży nieruchomości.',
   },
 ]
 

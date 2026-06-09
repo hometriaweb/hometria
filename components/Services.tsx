@@ -10,22 +10,22 @@ const services = [
   {
     icon: RefreshCcw,
     title: 'Odkup nieruchomości',
-    description: 'Szybki odkup bez pośredników – gotówka nawet w 7 dni.',
+    description: 'Szybki i bezpieczny odkup nieruchomości. Indywidualna wycena oraz sprawna finalizacja transakcji.',
   },
   {
     icon: TrendingUp,
     title: 'Inwestycje',
-    description: 'Doradztwo inwestycyjne i optymalizacja portfela nieruchomości.',
+    description: 'Doradztwo w zakresie inwestycji na rynku nieruchomości oraz analiza potencjału inwestycyjnego.',
   },
   {
     icon: FileText,
     title: 'Wsparcie formalne',
-    description: 'Obsługa prawna, kredytowa i dokumentacyjna pod jednym dachem.',
+    description: 'Wsparcie w zakresie formalności, finansowania oraz kompletowania dokumentacji niezbędnej do przeprowadzenia transakcji.',
   },
   {
     icon: Shield,
     title: 'Ubezpieczenia',
-    description: 'Ubezpieczenia nieruchomości dopasowane do Twoich potrzeb.',
+    description: 'Ubezpieczenia nieruchomości, komunikacyjne i firmowe dopasowane do indywidualnych potrzeb.',
   },
 ]
 

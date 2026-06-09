@@ -17,13 +17,6 @@ export const metadata: Metadata = {
     'HOMETRIA to profesjonalne biuro nieruchomości specjalizujące się w kompleksowej obsłudze sprzedaży, zakupu oraz inwestycji. Towarzyszymy klientom na każdym etapie transakcji w Malborku i okolicach.',
 }
 
-const stats = [
-  { label: 'Lat na rynku', value: '12+' },
-  { label: 'Zadowolonych klientów', value: '500+' },
-  { label: 'Sprzedanych nieruchomości', value: '850+' },
-  { label: 'Ekspertów w zespole', value: '15' },
-]
-
 const reasons = [
   {
     icon: Shield,
@@ -101,17 +94,23 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── Stats ───────────────────────────────────────────────── */}
+        {/* ── Wartości ────────────────────────────────────────────── */}
         <section className="py-16 bg-gray-950">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 divide-x divide-white/10">
-              {stats.map((stat, i) => (
-                <ScrollReveal key={i} delay={0.1 * i} className="text-center px-4">
-                  <p className="text-4xl sm:text-5xl font-black text-white mb-2">{stat.value}</p>
-                  <p className="text-sm font-medium text-gray-400">{stat.label}</p>
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 mb-6">
+              {['PROFESJONALIZM', 'PUNKTUALNOŚĆ', 'ZAANGAŻOWANIE'].map((value, i) => (
+                <ScrollReveal key={value} delay={0.1 * i}>
+                  <p className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                    {value}
+                  </p>
                 </ScrollReveal>
               ))}
             </div>
+            <ScrollReveal delay={0.4}>
+              <p className="text-sm font-medium tracking-widest uppercase" style={{ color: '#C89B3C' }}>
+                To cechy dobrego partnera
+              </p>
+            </ScrollReveal>
           </div>
         </section>
 

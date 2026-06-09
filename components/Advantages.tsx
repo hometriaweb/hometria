@@ -12,7 +12,7 @@ const advantages = [
     icon: Award,
     title: 'Doświadczenie',
     description:
-      'Ponad 12 lat na rynku i setki sfinalizowanych transakcji to nasz najlepszy certyfikat jakości.',
+      'Wieloletnia znajomość rynku nieruchomości oraz liczne zrealizowane transakcje to nasz certyfikat.',
   },
   {
     icon: Cpu,
