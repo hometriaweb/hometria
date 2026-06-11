@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import ScrollToTop from '@/components/ScrollToTop'
 import LocalBusinessSchema from '@/components/LocalBusinessSchema'
 import FloatingPhone from '@/components/FloatingPhone'
+import CookieBanner from '@/components/CookieBanner'
 import './globals.css'
 
 const inter = Inter({
@@ -55,6 +56,11 @@ export const metadata: Metadata = {
     description:
       'Profesjonalne biuro nieruchomości. Sprzedaż, wynajem i odkup nieruchomości.',
   },
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
   robots: {
     index: true,
     follow: true,
@@ -79,6 +85,7 @@ export default function RootLayout({
         <LocalBusinessSchema />
         <FloatingPhone />
         <ScrollToTop />
+        <CookieBanner />
         {children}
       </body>
     </html>
