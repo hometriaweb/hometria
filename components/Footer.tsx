@@ -147,7 +147,10 @@ export default function Footer() {
             © {year} HOMETRIA sp. z o.o. Wszelkie prawa zastrzeżone.
           </p>
           <p className="text-xs text-gray-600">
-            Licencja pośrednika nieruchomości nr 00000
+            Design + deploy by{' '}
+            <a href="https://bartlomiejcwiklak.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              bartlomiejcwiklak.com
+            </a>
           </p>
         </div>
       </div>
