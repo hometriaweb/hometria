@@ -20,10 +20,6 @@ export async function getFeaturedProperties(): Promise<Property[]> {
   return data as Property[]
 }
 
-/**
- * Fetch all properties from Sanity CMS with Next.js cache.
- * Revalidates in the background every 1 hour (3600s) to save API calls.
- */
 export async function getAllProperties(): Promise<Property[]> {
   const data = await client.fetch(
     ALL_PROPERTIES_QUERY,
