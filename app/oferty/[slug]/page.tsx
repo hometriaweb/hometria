@@ -341,6 +341,14 @@ export default async function PropertyDetailPage({
             </aside>
           </div>
 
+          {/* ── Description ─────────────────────────────────────── */}
+          {p.description && (
+            <section className="mb-16 max-w-3xl">
+              <h2 className="text-xl font-bold text-gray-900 mb-4">Opis nieruchomości</h2>
+              <p className="text-gray-600 leading-relaxed whitespace-pre-line">{p.description}</p>
+            </section>
+          )}
+
           {/* ── Contact form ────────────────────────────────────── */}
           <section
             id="kontakt-formularz"

@@ -57,7 +57,8 @@ export const PROPERTY_BY_SLUG_QUERY = defineQuery(`
     category,
     isPromoted,
     mainImage,
-    gallery
+    gallery,
+    description
   }
 `)
 

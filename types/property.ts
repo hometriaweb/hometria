@@ -14,6 +14,7 @@ export interface Property {
   isPromoted: boolean
   mainImage: SanityImageSource | string  // SanityImageSource from CMS, plain string path for mock
   gallery?: (SanityImageSource | string)[]
+  description?: string
 }
 
 // ─── Filter types (future use) ────────────────────────────────────────────────
