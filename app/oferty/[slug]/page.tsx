@@ -261,8 +261,14 @@ export default async function PropertyDetailPage({
           {/* ── Main grid: gallery + sidebar ───────────────────── */}
           <div className="grid lg:grid-cols-3 gap-10 mb-16">
             {/* Gallery — takes 2 cols */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 space-y-8">
               <PropertyGallery images={images} title={p.title} />
+              {p.description && (
+                <div>
+                  <h2 className="text-xl font-bold text-gray-900 mb-4">Opis nieruchomości</h2>
+                  <p className="text-gray-600 leading-relaxed whitespace-pre-line">{p.description}</p>
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}
@@ -341,13 +347,6 @@ export default async function PropertyDetailPage({
             </aside>
           </div>
 
-          {/* ── Description ─────────────────────────────────────── */}
-          {p.description && (
-            <section className="mb-16 max-w-3xl">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">Opis nieruchomości</h2>
-              <p className="text-gray-600 leading-relaxed whitespace-pre-line">{p.description}</p>
-            </section>
-          )}
 
           {/* ── Contact form ────────────────────────────────────── */}
           <section
