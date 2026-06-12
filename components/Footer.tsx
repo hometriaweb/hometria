@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+
 // Inline brand SVG icons — lucide-react v1 does not ship social brand icons
 function IconFacebook() {
   return (
