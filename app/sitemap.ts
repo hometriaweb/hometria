@@ -2,40 +2,23 @@ import type { MetadataRoute } from 'next'
 import { client } from '@/sanity/lib/client'
 import { ALL_SLUGS_QUERY } from '@/lib/queries'
 
-export const revalidate = 86400 // Revalidate the sitemap once a day
+const baseUrl = 'https://hometria.pl'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://hometria.pl'
+  const staticPages: MetadataRoute.Sitemap = [
+    { url: baseUrl, changeFrequency: 'daily', priority: 1 },
+    { url: `${baseUrl}/oferty`, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${baseUrl}/kontakt`, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${baseUrl}/o-nas`, changeFrequency: 'yearly', priority: 0.7 },
+    { url: `${baseUrl}/uslugi`, changeFrequency: 'yearly', priority: 0.7 },
+  ]
 
-  // Fetch all property slugs
-  const slugs = await client.fetch<{ slug: string }[]>(
-    ALL_SLUGS_QUERY,
-    {},
-    { next: { revalidate: 3600 } }
-  )
-
-  const propertyUrls = slugs.map(({ slug }) => ({
+  const slugs = await client.fetch<{ slug: string }[]>(ALL_SLUGS_QUERY)
+  const propertyPages: MetadataRoute.Sitemap = slugs.map(({ slug }) => ({
     url: `${baseUrl}/oferty/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
+    changeFrequency: 'weekly',
     priority: 0.8,
   }))
 
-  const staticRoutes = [
-    '',
-    '/oferty',
-    '/o-nas',
-    '/uslugi',
-    '/kontakt',
-    '/polityka-prywatnosci',
-    '/polityka-cookies',
-    '/regulamin'
-  ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: route === '' ? 1 : 0.9,
-  }))
-
-  return [...staticRoutes, ...propertyUrls]
+  return [...staticPages, ...propertyPages]
 }

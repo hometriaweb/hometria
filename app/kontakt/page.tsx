@@ -103,25 +103,6 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <ScrollReveal delay={0.6}>
-                <div className="pt-8 border-t border-gray-100">
-                  <h3 className="text-lg font-bold text-gray-900 mb-4">
-                    Obserwuj nas
-                  </h3>
-                  <div className="flex gap-4">
-                    {/* Social Placeholders */}
-                    {['Facebook', 'Instagram', 'LinkedIn'].map((social) => (
-                      <a
-                        key={social}
-                        href="#"
-                        className="px-4 py-2 rounded-lg bg-gray-50 text-gray-600 font-medium text-sm hover:bg-[#FF1493] hover:text-white transition-colors"
-                      >
-                        {social}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              </ScrollReveal>
             </div>
 
             {/* Right: Contact Form */}

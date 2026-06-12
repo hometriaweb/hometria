@@ -31,6 +31,7 @@ export default function CookieBanner() {
         </p>
         <button
           onClick={accept}
+          aria-label="Zaakceptuj politykę cookies"
           className="shrink-0 px-5 py-2 rounded-lg bg-[#FF1493] text-white text-xs font-semibold hover:bg-[#D9007B] transition-colors"
         >
           Akceptuję

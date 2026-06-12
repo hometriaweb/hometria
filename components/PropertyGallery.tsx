@@ -83,6 +83,7 @@ export default function PropertyGallery({ images, title }: PropertyGalleryProps)
         {/* Fullscreen button */}
         <button
           onClick={(e) => { e.stopPropagation(); openLightbox(); }}
+          aria-label="Otwórz galerię pełnoekranową"
           className="absolute top-3 right-3 z-10 w-9 h-9 rounded-lg bg-black/40 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60"
         >
           <Expand className="w-4 h-4" />
@@ -93,12 +94,14 @@ export default function PropertyGallery({ images, title }: PropertyGalleryProps)
           <>
             <button
               onClick={(e) => { e.stopPropagation(); paginate(-1) }}
+              aria-label="Poprzednie zdjęcie"
               className="absolute left-3 z-10 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); paginate(1) }}
+              aria-label="Następne zdjęcie"
               className="absolute right-3 z-10 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60"
             >
               <ChevronRight className="w-5 h-5" />
@@ -121,7 +124,7 @@ export default function PropertyGallery({ images, title }: PropertyGalleryProps)
                 i === imageIndex ? 'border-[#FF1493]' : 'border-transparent hover:border-gray-300'
               }`}
             >
-              <Image src={src} alt="" fill className="object-cover" sizes="80px" />
+              <Image src={src} alt={`${title} – miniatura ${i + 1}`} fill className="object-cover" sizes="80px" />
               {i === imageIndex && <div className="absolute inset-0 bg-[#FF1493]/10" />}
             </button>
           ))}
@@ -140,6 +143,7 @@ export default function PropertyGallery({ images, title }: PropertyGalleryProps)
           >
             <button
               onClick={closeLightbox}
+              aria-label="Zamknij galerię"
               className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
             >
               <X className="w-5 h-5" />
@@ -173,10 +177,10 @@ export default function PropertyGallery({ images, title }: PropertyGalleryProps)
                   <div className="relative w-full max-w-6xl max-h-[85vh] aspect-[16/9]">
                     <Image
                       src={images[imageIndex]}
-                      alt=""
+                      alt={`${title} – zdjęcie ${imageIndex + 1} z ${images.length}`}
                       fill
                       className="object-contain pointer-events-none"
-                      sizes="100vw"
+                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 95vw, 90vw"
                       priority
                     />
                   </div>
@@ -189,12 +193,14 @@ export default function PropertyGallery({ images, title }: PropertyGalleryProps)
               <>
                 <button
                   onClick={(e) => { e.stopPropagation(); paginate(-1) }}
+                  aria-label="Poprzednie zdjęcie"
                   className="absolute left-4 z-10 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
                   onClick={(e) => { e.stopPropagation(); paginate(1) }}
+                  aria-label="Następne zdjęcie"
                   className="absolute right-4 z-10 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-white/20 transition-colors"
                 >
                   <ChevronRight className="w-6 h-6" />

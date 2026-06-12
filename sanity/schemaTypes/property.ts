@@ -1,44 +1,121 @@
 export default {
-    name: 'property',
-    title: 'Nieruchomość',
-    type: 'document',
-    fields: [
-        { name: 'title', title: 'Tytuł', type: 'string' },
-        { name: 'slug', title: 'Slug', type: 'slug', options: { source: 'title' } },
-        { name: 'price', title: 'Cena', type: 'number' },
-        { name: 'area', title: 'Powierzchnia (m2)', type: 'number' },
-        { name: 'rooms', title: 'Liczba pokoi', type: 'number' },
-        { name: 'location', title: 'Lokalizacja', type: 'string' },
-        {
-            name: 'marketType',
-            title: 'Rynek',
-            type: 'string',
-            options: {
-                list: ['Pierwotny', 'Wtórny'],
-                layout: 'radio' // Wyświetli się jako wygodne radio buttony w panelu
-            }
-        },
-        {
-            name: 'category',
-            title: 'Typ nieruchomości',
-            type: 'string',
-            options: {
-                list: ['Mieszkanie', 'Dom', 'Działka', 'Lokale komercyjne']
-            }
-        },
-        {
-            name: 'mainImage',
-            title: 'Zdjęcie główne (miniaturka)',
-            type: 'image',
-            options: { hotspot: true }
-        },
-        {
-            name: 'gallery',
-            title: 'Galeria zdjęć',
-            type: 'array',
-            of: [{ type: 'image', options: { hotspot: true } }],
-            options: { layout: 'grid' }
-        },
-        { name: 'isPromoted', title: 'Promowana na stronie głównej', type: 'boolean' }
-    ]
+  name: 'property',
+  title: 'Nieruchomość',
+  type: 'document',
+  groups: [
+    { name: 'content', title: 'Informacje podstawowe', default: true },
+    { name: 'media', title: 'Zdjęcia' },
+    { name: 'details', title: 'Szczegóły' },
+  ],
+  fields: [
+    {
+      group: 'content',
+      name: 'title',
+      title: 'Tytuł oferty',
+      type: 'string',
+      description: 'Nagłówek widoczny na stronie, np. "Mieszkanie 3-pokojowe, centrum Malborka"',
+      validation: (Rule: { required: () => { min: (n: number) => { max: (n: number) => unknown } } }) =>
+        Rule.required().min(5).max(120),
+    },
+    {
+      group: 'content',
+      name: 'slug',
+      title: 'Adres URL (slug)',
+      type: 'slug',
+      description: 'Kliknij "Generate" aby automatycznie wygenerować z tytułu',
+      options: { source: 'title' },
+      validation: (Rule: { required: () => unknown }) => Rule.required(),
+    },
+    {
+      group: 'details',
+      name: 'price',
+      title: 'Cena (PLN)',
+      type: 'number',
+      description: 'Cena w złotych, bez spacji i znaku waluty, np. 350000',
+      validation: (Rule: { required: () => { min: (n: number) => unknown } }) =>
+        Rule.required().min(1),
+    },
+    {
+      group: 'details',
+      name: 'area',
+      title: 'Powierzchnia (m²)',
+      type: 'number',
+      description: 'Całkowita powierzchnia użytkowa w metrach kwadratowych',
+      validation: (Rule: { required: () => { min: (n: number) => unknown } }) =>
+        Rule.required().min(1),
+    },
+    {
+      group: 'details',
+      name: 'rooms',
+      title: 'Liczba pokoi',
+      type: 'number',
+      description: 'Wpisz 0 jeśli nie dotyczy (np. działka, lokal usługowy)',
+      validation: (Rule: { required: () => { min: (n: number) => unknown } }) =>
+        Rule.required().min(0),
+    },
+    {
+      group: 'content',
+      name: 'location',
+      title: 'Lokalizacja',
+      type: 'string',
+      description: 'Miasto lub dzielnica, np. "Malbork, Śródmieście"',
+      validation: (Rule: { required: () => unknown }) => Rule.required(),
+    },
+    {
+      group: 'details',
+      name: 'marketType',
+      title: 'Rynek',
+      type: 'string',
+      description: 'Pierwotny = od dewelopera/budowa; Wtórny = używana nieruchomość',
+      options: {
+        list: ['Pierwotny', 'Wtórny'],
+        layout: 'radio',
+      },
+      validation: (Rule: { required: () => unknown }) => Rule.required(),
+    },
+    {
+      group: 'details',
+      name: 'category',
+      title: 'Typ nieruchomości',
+      type: 'string',
+      options: {
+        list: ['Mieszkanie', 'Dom', 'Działka', 'Lokale komercyjne'],
+      },
+      validation: (Rule: { required: () => unknown }) => Rule.required(),
+    },
+    {
+      group: 'media',
+      name: 'mainImage',
+      title: 'Zdjęcie główne (miniaturka)',
+      type: 'image',
+      description: 'Wyświetlane na liście ofert. Najlepiej poziome (proporcje 16:9)',
+      options: { hotspot: true },
+      validation: (Rule: { required: () => unknown }) => Rule.required(),
+    },
+    {
+      group: 'media',
+      name: 'gallery',
+      title: 'Galeria zdjęć',
+      type: 'array',
+      description: 'Dodatkowe zdjęcia widoczne na stronie oferty',
+      of: [{ type: 'image', options: { hotspot: true } }],
+      options: { layout: 'grid' },
+    },
+    {
+      group: 'content',
+      name: 'description',
+      title: 'Opis oferty',
+      type: 'text',
+      description: 'Szczegółowy opis nieruchomości widoczny na stronie oferty',
+      rows: 6,
+    },
+    {
+      group: 'content',
+      name: 'isPromoted',
+      title: 'Promowana na stronie głównej',
+      type: 'boolean',
+      description: 'Zaznacz aby oferta pojawiła się w sekcji "Polecane" na stronie głównej',
+      initialValue: false,
+    },
+  ],
 }
